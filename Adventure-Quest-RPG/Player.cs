@@ -1,18 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Adventure_Quest_RPG
 {
-    public class Player
+    public class Player:Character
     {
-        public string Name { get; set; }
-        public int Health { get; set; }
-        public int AttackPower { get; set; }
-        public int Defense { get; set; }
-
         public Player( string name ) {
 
             Name = name;
@@ -20,5 +17,19 @@ namespace Adventure_Quest_RPG
             AttackPower = 10;
             Defense = 20;
         }
+
+        public void DisplayPlayerInfo()
+        {
+            Console.WriteLine($"player Name: {Name} Health:{Health} AttackPower: {AttackPower} Defense:{Defense}");
+        }
+        public void SolveDamge()
+        {
+            Health = Health - Math.Max(damage - Defense, 0);
+        }
+
+
+
+
+
     }
 }

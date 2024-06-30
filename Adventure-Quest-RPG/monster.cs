@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace Adventure_Quest_RPG
 {
-    public abstract class Monster
+    public abstract class Monster:Character
     {
-        public string Name { get; set; }
-        public int Health { get; set; }
-        public int AttackPower { get; set; }
-        public int Defense { get; set; }
-
-
         public Monster(string name , int health , int attack_power , int defense)
         {
             Name = name;
@@ -22,7 +16,6 @@ namespace Adventure_Quest_RPG
             Defense = defense;
         }
 
-        //public abstract void Attack(Player player);
     }
 
 }
