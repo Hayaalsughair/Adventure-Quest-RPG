@@ -16,10 +16,12 @@ namespace Adventure_Quest_RPG
             Console.WriteLine("    #     ####### #######   #     #####   #   #");
             Console.WriteLine("   # #       #       #     # #   #     #  #  #");
             Console.WriteLine("  #####      #       #    #####  #        ###");
-            Console.WriteLine(" #     #     #       #   #     # #     #  #  #");
-            Console.WriteLine("#       #    #       #  #       # #####   #   #");
+            Console.WriteLine(" #     #     #       #   #     # #     #  #   #");
+            Console.WriteLine("#       #    #       #  #       # #####   #    #");
 
-            Console.WriteLine($"{attacker.Name}Player\tYour Power:{attacker.AttackPower}\tYour Health{damage}%\n{target.Name} Health:{target.Health}%");        }
+            Console.WriteLine($"{attacker.Name}Player\tYour Power:{attacker.AttackPower}\tYour Health{damage}%\n{target.Name} Health:{target.Health}%");        
+        }
+
     
     }
 }
