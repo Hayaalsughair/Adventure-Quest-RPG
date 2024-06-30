@@ -22,14 +22,5 @@ namespace Adventure_Quest_RPG
         {
             Console.WriteLine($"player Name: {Name} Health:{Health} AttackPower: {AttackPower} Defense:{Defense}");
         }
-        public void SolveDamge()
-        {
-            Health = Health - Math.Max(damage - Defense, 0);
-        }
-
-
-
-
-
     }
 }
