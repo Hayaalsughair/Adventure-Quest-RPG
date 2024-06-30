@@ -8,7 +8,6 @@
             //player1.DisplayPlayerInfo();
             //Console.WriteLine("");
 
-
         }
     }
 }
