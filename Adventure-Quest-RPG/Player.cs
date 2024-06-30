@@ -18,9 +18,9 @@ namespace Adventure_Quest_RPG
             Defense = 20;
         }
 
-        public void DisplayPlayerInfo()
-        {
-            Console.WriteLine($"player Name: {Name} Health:{Health} AttackPower: {AttackPower} Defense:{Defense}");
-        }
+        //public void DisplayPlayerInfo()
+        //{
+        //    Console.WriteLine($"player Name: {Name} Health:{Health} AttackPower: {AttackPower} Defense:{Defense}");
+        //}
     }
 }

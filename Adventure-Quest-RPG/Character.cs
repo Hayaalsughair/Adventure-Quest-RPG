@@ -13,11 +13,6 @@ namespace Adventure_Quest_RPG
         public int AttackPower { get; set; }
         public int Defense { get; set; }
 
-
-        //public void DisplayPlayerInfo()
-        //{
-        //    Console.WriteLine($"");
-        //}
         public void CalcDamage(int damage)
         {
             Health -= damage;
