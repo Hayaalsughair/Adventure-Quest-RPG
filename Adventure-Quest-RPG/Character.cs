@@ -18,6 +18,7 @@ namespace Adventure_Quest_RPG
             Health -= damage;
             Health = Math.Max(Health, 0);
 
+
         }
     }
 }
