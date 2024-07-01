@@ -1,6 +1,3 @@
-# Adventure-Quest-RPG
-Here's the updated README file for your Adventure Quest RPG project in the requested format:
-
 
 # Adventure Quest RPG Console Application
 
@@ -32,6 +29,3 @@ This console application simulates an RPG game where a player battles against mo
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
-
-Feel free to further customize it as needed.
