@@ -13,11 +13,6 @@ namespace Adventure_Quest_RPG
         {
             int damage =Math.Max( attacker.AttackPower - target.Defense , 0);
             target.CalcDamage(damage);
-            Console.WriteLine("    #     ####### #######   #     #####   #   #");
-            Console.WriteLine("   # #       #       #     # #   #     #  #  #");
-            Console.WriteLine("  #####      #       #    #####  #        ###");
-            Console.WriteLine(" #     #     #       #   #     # #     #  #   #");
-            Console.WriteLine("#       #    #       #  #       # #####   #    #");
 
             Console.WriteLine($"{attacker.Name}Player\tYour Health{attacker.Health}%\n{target.Name}\tHealth:{target.Health}%");        
         }
