@@ -19,10 +19,10 @@ namespace Adventure_Quest_RPG
             Console.WriteLine(" #     #     #       #   #     # #     #  #   #");
             Console.WriteLine("#       #    #       #  #       # #####   #    #");
 
-            Console.WriteLine($"{attacker.Name}Player\tYour Power:{attacker.AttackPower}\tYour Health{damage}%\n{target.Name} Health:{target.Health}%");        
+            Console.WriteLine($"{attacker.Name}Player\tYour Health{attacker.Health}%\n{target.Name}\tHealth:{target.Health}%");        
         }
 
-        public static bool startStartBattle(Player player, Monster enemy) 
+        public static bool StartStartBattle(Player player, Monster enemy) 
         {
             bool isPlayerWin=false;
             while (player.Health > 0 && enemy.Health > 0)
@@ -36,12 +36,12 @@ namespace Adventure_Quest_RPG
                     break;
 
                 }
-                if(player.Health >0)
+                if(player.Health > 0)
                 {
                     Console.WriteLine("Enemy's turn.");
                     Attack(enemy,player);
                 }
-                if (player.Health > 0) 
+                if (player.Health < 0) 
                 {
                     Console.WriteLine("███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀");
                     Console.WriteLine("██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼");
