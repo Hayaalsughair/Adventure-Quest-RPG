@@ -7,23 +7,21 @@ namespace Adventure_Quest_RPG
         static void Main(string[] args)
         {
 
-
-                   
-            Console.WriteLine("\t\t ############         ###########          ########## ");
-            Console.WriteLine("\t\t ## ##########        ## #########        ##########     ");
-            Console.WriteLine("\t\t ##          ##       ##         ##      ##   ");
-            Console.WriteLine("\t\t ##           ##      ##          ##     ##     ");
-            Console.WriteLine("\t\t ##           ##      ##           ##    ##  ");
-            Console.WriteLine("\t\t ##          ##       ##          ##     ##     ");
-            Console.WriteLine("\t\t ##         ##        ##         ##      ##   ");
-            Console.WriteLine("\t\t ############         ## #########       ");
-            Console.WriteLine("\t\t ############         ###########        ");
-            Console.WriteLine("\t\t ##       ##          ## ");
-            Console.WriteLine("\t\t ##        ##         ## ");
-            Console.WriteLine("\t\t ##         ##        ##");
-            Console.WriteLine("\t\t ##          ##       ##");
-            Console.WriteLine("\t\t ##           ##      ##");
-            Console.WriteLine("\t\t ##            ##     ##");
+            //Console.WriteLine("\t\t ############         ###########       ");
+            //Console.WriteLine("\t\t ## ##########        ## #########            ");
+            //Console.WriteLine("\t\t ##          ##       ##         ##          ");
+            //Console.WriteLine("\t\t ##           ##      ##          ##          ");
+            //Console.WriteLine("\t\t ##           ##      ##           ##      ");
+            //Console.WriteLine("\t\t ##          ##       ##          ##          ");
+            //Console.WriteLine("\t\t ##         ##        ##         ##         ");
+            //Console.WriteLine("\t\t ############         ############       ");
+            //Console.WriteLine("\t\t ############         ");
+            //Console.WriteLine("\t\t ##       ## ");
+            //Console.WriteLine("\t\t ##        ## ");
+            //Console.WriteLine("\t\t ##         ## ");
+            //Console.WriteLine("\t\t ##          ## ");
+            //Console.WriteLine("\t\t ##           ## ");
+            //Console.WriteLine("\t\t ##            ## ");
 
 
             try
