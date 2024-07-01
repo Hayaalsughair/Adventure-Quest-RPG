@@ -11,12 +11,12 @@ namespace Adventure_Quest_RPG
     public class Player:Character
     {
         //Random random = new Random();
-        public Player( string name  , int attackPower = 10) {
+        public Player( string name  , int attackPower = 60) {
 
             Name = name;
             Health = 100;
             AttackPower = attackPower;
-            Defense = 30; 
+            Defense = 18; 
         }
 
         
