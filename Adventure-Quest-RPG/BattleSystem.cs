@@ -9,73 +9,120 @@ namespace Adventure_Quest_RPG
 {
     public class BattleSystem
     {
-        public static void Attack(Character attacker, Character target )
-        {
-            int damage =Math.Max( attacker.AttackPower - target.Defense , 0);
-            target.CalcDamage(damage);
-            Console.WriteLine("    #     ####### #######   #     #####   #   #");
-            Console.WriteLine("   # #       #       #     # #   #     #  #  #");
-            Console.WriteLine("  #####      #       #    #####  #        ###");
-            Console.WriteLine(" #     #     #       #   #     # #     #  #   #");
-            Console.WriteLine("#       #    #       #  #       # #####   #    #");
 
-            Console.WriteLine($"{attacker.Name}Player\tYour Health{attacker.Health}%\n{target.Name}\tHealth:{target.Health}%");        
+        public static void Attack(Character attacker, Character target)
+        {
+
+            //Console.WriteLine($"Round :{round}\n");
+
+            int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
+            target.CalcDamage(damage);
+
+            Thread.Sleep(600);
+
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+
+            Console.WriteLine("\t\t          ###        ############# #############       ###               ######      ##      ##");
+            Console.WriteLine("\t\t         #####       ############# #############      #####             ########     ##     ##");
+            Console.WriteLine("\t\t        ##   ##            ##           ##           ##   ##           ##      ##    ##    ##");
+            Console.WriteLine("\t\t       ###   ###           ##           ##          ###   ###          ##      ##    ##   ##");
+            Console.WriteLine("\t\t      ###########          ##           ##         ###########         ##            #####");
+            Console.WriteLine("\t\t     #############         ##           ##        #############        ##            #####");
+            Console.WriteLine("\t\t    ##           ##        ##           ##       ##           ##       ##      ##    ##   ##");
+            Console.WriteLine("\t\t   ##             ##       ##           ##      ##             ##      ##      ##    ##    ##");
+            Console.WriteLine("\t\t  ##               ##      ##           ##     ##               ##      ########     ##     ##");
+            Console.WriteLine("\t\t ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
+
+            Console.WriteLine($"\nThe Damage Is :{damage}");
+            Console.WriteLine($"Attacker Name :{attacker.Name} \t Attacker Health{attacker.Health}%");
+            Console.WriteLine($"Target Name:{target.Name}\t\t Target Health:{target.Health}%");
+            Thread.Sleep(6000);
+            //Console.Clear();
         }
 
-        public static bool StartStartBattle(Player player, Monster enemy) 
+        public static bool StartStartBattle(Player player, Monster enemy)
         {
-            bool isPlayerWin=false;
+            int Round = 0;
+            bool isPlayerWin = false;
             while (player.Health > 0 && enemy.Health > 0)
             {
+                Round++;
                 Console.WriteLine("Player's turn.");
                 Attack(player, enemy);
-                if (enemy.Health <=  0) {
-
+                Thread.Sleep(3000);
+               // Console.Clear();
+                if (enemy.Health <= 0) {
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
                     Console.WriteLine("Ooh! You Still Alive ,Monster Is Defeated");
+                    Thread.Sleep(3000);
+                    //Console.Clear();
                     isPlayerWin = true;
                     break;
 
                 }
-                if(player.Health > 0)
+                if (player.Health > 0)
                 {
                     Console.WriteLine("Enemy's turn.");
-                    Attack(enemy,player);
+                    Round++;
+                    Attack(enemy, player);
                 }
-                if (player.Health < 0) 
+                if (player.Health <= 0)
                 {
-                    Console.WriteLine("███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀");
-                    Console.WriteLine("██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼");
-                    Console.WriteLine("██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀");
-                    Console.WriteLine("██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██┼┼┼");
-                    Console.WriteLine("███▄▄▄██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██▄▄▄");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("███▀▀▀███┼▀███┼┼██▀┼██▀▀▀┼██▀▀▀▀██▄┼");
-                    Console.WriteLine("██┼┼┼┼┼██┼┼┼██┼┼██┼┼██┼┼┼┼██┼┼┼┼┼██┼");
-                    Console.WriteLine("██┼┼┼┼┼██┼┼┼██┼┼██┼┼██▀▀▀┼██▄▄▄▄▄▀▀┼");
-                    Console.WriteLine("██┼┼┼┼┼██┼┼┼██┼┼█▀┼┼██┼┼┼┼██┼┼┼┼┼██┼");
-                    Console.WriteLine("███▄▄▄███┼┼┼─▀█▀┼┼─┼██▄▄▄┼██┼┼┼┼┼██▄");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼████▄┼┼┼▄▄▄▄▄▄▄┼┼┼▄████┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼▀▀█▄█████████▄█▀▀┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼█████████████┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼██▀▀▀███▀▀▀██┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼██┼┼┼███┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼█████▀▄▀█████┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼┼███████████┼┼┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼▄▄▄██┼┼█▀█▀█┼┼██▄▄▄┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼▀▀██┼┼┼┼┼┼┼┼┼┼┼██▀▀┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼");
-                    Console.WriteLine("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼");
+                    Console.WriteLine($"Round :{Round}\n");
 
-                    isPlayerWin=false;
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+
+                    Console.WriteLine("\t\t########################################################################");
+                    Console.WriteLine("\t\t########################################################################");
+                    Console.WriteLine("\t\t##################███▀▀▀██#███▀▀▀███#███▀█▄█▀███#██▀▀▀##################");
+                    Console.WriteLine("\t\t##################██####██#██#####██#██###█###██#██#####################");
+                    Console.WriteLine("\t\t##################██###▄▄▄#██▄▄▄▄▄██#██###▀###██#██▀▀▀##################");
+                    Console.WriteLine("\t\t##################██####██#██#####██#██#######██#██#####################");
+                    Console.WriteLine("\t\t##################███▄▄▄██#██#####██#██#######██#██▄▄▄##################");
+                    Console.WriteLine("\t\t########################################################################");
+                    Console.WriteLine("\t\t##################███▀▀▀███#▀███##██▀#██▀▀▀#██▀▀▀▀██▄###################");
+                    Console.WriteLine("\t\t##################██#####██###██##██##██####██#####██###################");
+                    Console.WriteLine("\t\t##################██#####██###██##██##██▀▀▀#██▄▄▄▄▄▀▀###################");
+                    Console.WriteLine("\t\t##################██#####██###▀█##█▀##██####██#####██###################");
+                    Console.WriteLine("\t\t##################███▄▄▄███### ▀▀█▀▀##██▄▄▄#██#####██▄##################");
+                    Console.WriteLine("\t\t########################################################################");
+                    Console.WriteLine("\t\t########################################################################");
+                    Console.WriteLine("\t\t##########################██###############██###########################");
+                    Console.WriteLine("\t\t########################████▄###▄▄▄▄▄▄▄###▄████#########################");
+                    Console.WriteLine("\t\t###########################▀▀█▄█████████▄█▀▀############################");
+                    Console.WriteLine("\t\t#############################█████████████##############################");
+                    Console.WriteLine("\t\t#############################██▀▀▀███▀▀▀██##############################");
+                    Console.WriteLine("\t\t#############################██###███###██##############################");
+                    Console.WriteLine("\t\t#############################█████▀▄▀█████##############################");
+                    Console.WriteLine("\t\t##############################███████████###############################");
+                    Console.WriteLine("\t\t######################### ▄▄▄██##█▀█▀█##██▄▄▄###########################");
+                    Console.WriteLine("\t\t##########################▀▀██###########██▀▀###########################");
+                    Console.WriteLine("\t\t############################▀▀###########▀▀#############################");
+                    Console.WriteLine("\t\t########################################################################");
+                    Console.WriteLine("\t\t########################################################################");
+
+                    Thread.Sleep(3000);
+                    //Console.Clear();
+                    isPlayerWin = false;
                     break;
                 }
             }
             return isPlayerWin;
 
         }
-
+        
 
 
     }
