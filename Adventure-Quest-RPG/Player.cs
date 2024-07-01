@@ -10,17 +10,15 @@ namespace Adventure_Quest_RPG
 {
     public class Player:Character
     {
-        public Player( string name ) {
+        //Random random = new Random();
+        public Player( string name  , int attackPower = 10) {
 
             Name = name;
             Health = 100;
-            AttackPower = 10;
-            Defense = 20;
+            AttackPower = attackPower;
+            Defense = 30; 
         }
 
-        //public void DisplayPlayerInfo()
-        //{
-        //    Console.WriteLine($"player Name: {Name} Health:{Health} AttackPower: {AttackPower} Defense:{Defense}");
-        //}
+        
     }
 }
