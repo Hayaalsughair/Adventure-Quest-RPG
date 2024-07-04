@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adventure_Quest_RPG
 {
-    public abstract class Character
+    public abstract class Character:IBattleStates
     {
         public string Name { get; set; }
         public int Health { get; set; }
@@ -17,8 +17,6 @@ namespace Adventure_Quest_RPG
         {
             Health -= damage;
             Health = Math.Max(Health, 0);
-
-
         }
     }
 }
