@@ -8,6 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Adventure_Quest_RPG
 {
+
     public class Player:Character
     {
         //Random random = new Random();
