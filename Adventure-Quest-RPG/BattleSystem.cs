@@ -12,7 +12,7 @@ namespace Adventure_Quest_RPG
          
         
 
-        public static void Attack(Character attacker, Character target)
+        public static void Attack( IBattleStates attacker, IBattleStates target)
         {
 
             //Console.WriteLine($"Round :{Round}\n");
