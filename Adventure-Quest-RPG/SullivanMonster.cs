@@ -8,11 +8,7 @@ namespace Adventure_Quest_RPG
 {
     public class SullivanMonster : Monster
     {
-        public SullivanMonster() :base ("Sullivan",80,20,5)
-        {
-        }
+        public SullivanMonster() :base ("Sullivan",80,20,5){ }
 
     }
-
-
 }
