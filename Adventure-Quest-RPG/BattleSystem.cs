@@ -9,11 +9,13 @@ namespace Adventure_Quest_RPG
 {
     public class BattleSystem
     {
+         
+        
 
         public static void Attack(Character attacker, Character target)
         {
 
-            //Console.WriteLine($"Round :{round}\n");
+            //Console.WriteLine($"Round :{Round}\n");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
             target.CalcDamage(damage);
@@ -21,9 +23,9 @@ namespace Adventure_Quest_RPG
             Thread.Sleep(600);
 
             Console.Beep();
+            Console.Beep(); 
             Console.Beep();
-            Console.Beep();
-
+            Console.WriteLine("\n\n");
             Console.WriteLine("\t\t          ###        ############# #############       ###               ######      ##      ##");
             Console.WriteLine("\t\t         #####       ############# #############      #####             ########     ##     ##");
             Console.WriteLine("\t\t        ##   ##            ##           ##           ##   ##           ##      ##    ##    ##");
@@ -35,7 +37,7 @@ namespace Adventure_Quest_RPG
             Console.WriteLine("\t\t  ##               ##      ##           ##     ##               ##      ########     ##     ##");
             Console.WriteLine("\t\t ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
 
-            Console.WriteLine($"\nThe Damage Is :{damage}");
+            Console.WriteLine($"\n\nThe Damage Is :{damage}");
             Console.WriteLine($"Attacker Name :{attacker.Name} \t Attacker Health{attacker.Health}%");
             Console.WriteLine($"Target Name:{target.Name}\t\t Target Health:{target.Health}%");
             Thread.Sleep(6000);
@@ -44,15 +46,17 @@ namespace Adventure_Quest_RPG
 
         public static bool StartStartBattle(Player player, Monster enemy)
         {
-            int Round = 0;
+           
             bool isPlayerWin = false;
             while (player.Health > 0 && enemy.Health > 0)
             {
-                Round++;
+
+                //Random++;
                 Console.WriteLine("Player's turn.");
+
                 Attack(player, enemy);
                 Thread.Sleep(3000);
-               // Console.Clear();
+               
                 if (enemy.Health <= 0) {
                     Console.Beep();
                     Console.Beep();
@@ -70,12 +74,12 @@ namespace Adventure_Quest_RPG
                 if (player.Health > 0)
                 {
                     Console.WriteLine("Enemy's turn.");
-                    Round++;
+                    //Round++;
                     Attack(enemy, player);
                 }
                 if (player.Health <= 0)
                 {
-                    Console.WriteLine($"Round :{Round}\n");
+                    //Console.WriteLine($"Round :{Round}\n");
 
                     Console.Beep();
                     Console.Beep();

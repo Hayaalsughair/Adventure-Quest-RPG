@@ -7,22 +7,26 @@ namespace Adventure_Quest_RPG
         static void Main(string[] args)
         {
 
-            //Console.WriteLine("\t\t ############         ###########       ");
-            //Console.WriteLine("\t\t ## ##########        ## #########            ");
-            //Console.WriteLine("\t\t ##          ##       ##         ##          ");
-            //Console.WriteLine("\t\t ##           ##      ##          ##          ");
-            //Console.WriteLine("\t\t ##           ##      ##           ##      ");
-            //Console.WriteLine("\t\t ##          ##       ##          ##          ");
-            //Console.WriteLine("\t\t ##         ##        ##         ##         ");
-            //Console.WriteLine("\t\t ############         ############       ");
-            //Console.WriteLine("\t\t ############         ");
-            //Console.WriteLine("\t\t ##       ## ");
-            //Console.WriteLine("\t\t ##        ## ");
-            //Console.WriteLine("\t\t ##         ## ");
-            //Console.WriteLine("\t\t ##          ## ");
-            //Console.WriteLine("\t\t ##           ## ");
-            //Console.WriteLine("\t\t ##            ## ");
 
+            Console.WriteLine("\n\n");
+            Console.WriteLine("\t\t   ############         ###########          ############# ");
+            Console.WriteLine("\t\t   ## ##########        ## #########        ###############     ");
+            Console.WriteLine("\t\t   ##          ##       ##         ##      ##   ");
+            Console.WriteLine("\t\t   ##           ##      ##          ##     ##     ");
+            Console.WriteLine("\t\t   ##           ##      ##           ##    ##  ");
+            Console.WriteLine("\t\t   ##          ##       ##          ##     ##     ");
+            Console.WriteLine("\t\t   ##         ##        ##         ##      ##   ");
+            Console.WriteLine("\t\t   ############         ## #########       ##         ######");
+            Console.WriteLine("\t\t   ############         ###########        ##         ######");
+            Console.WriteLine("\t\t   ##       ##          ##                 ##          ## ");
+            Console.WriteLine("\t\t   ##        ##         ##                 ##          ## ");
+            Console.WriteLine("\t\t   ##         ##        ##                 ##          ##");
+            Console.WriteLine("\t\t   ##          ##       ##                 ##          ##");
+            Console.WriteLine("\t\t   ##           ##      ##                  ############");
+            Console.WriteLine("\t\t   ##            ##     ##                   ##########");
+
+            Console.WriteLine("\n\nWelcome to the RPG game!\n");
+            
 
             try
                 {
