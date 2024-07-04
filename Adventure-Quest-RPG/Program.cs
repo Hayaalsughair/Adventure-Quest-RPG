@@ -9,7 +9,6 @@ namespace Adventure_Quest_RPG
 
 
             Console.WriteLine("\n\n");
-
             Console.WriteLine("\t\t   ############         ###########          ############# ");
             Console.WriteLine("\t\t   ## ##########        ## #########        ###############     ");
             Console.WriteLine("\t\t   ##          ##       ##         ##      ##   ");
