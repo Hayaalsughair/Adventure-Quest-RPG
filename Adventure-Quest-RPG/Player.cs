@@ -11,34 +11,21 @@ namespace Adventure_Quest_RPG
 
     public class Player:Character
     {
+        public Inventory Inventory { get; set; }
         //Random random = new Random();
         public Player( string name  , int attackPower = 60) {
 
             Name = name;
             Health = 100;
             AttackPower = attackPower;
-            Defense = 18; 
+            Defense = 18;
+            Inventory = new Inventory();
+
         }
-        public void calcItemsDrop(string chanceItems) {
-            
-            switch (chanceItems)
-            {
-                case "Potion":
-                    Health += 30;
-                    break;
-                case "Armor":
-                    Defense += 10;
-                    break;
-                case "Weapon":
-                    AttackPower += 10;
-                    break;
-                case "Helmet":
-                    Defense += 5;
-                    break;
-                case "Sword":
-                    AttackPower += 5;
-                    break;
-            }
+        public void UseItem(Items item)
+        {
+            item.Use(this);
+            Inventory.Remove(item);
         }
     }
 }
