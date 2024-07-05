@@ -38,5 +38,17 @@ namespace Adventure_Quest_RPG
             }
             return false;
         }
+        public void Remove(Items item)
+        {
+            if (items.Contains(item))
+            {
+                items.Remove(item);
+                Console.WriteLine($"{item} removed from inventory.");
+            }
+            else
+            {
+                Console.WriteLine("Item not found in inventory.");
+            }
+        }
     }
 }

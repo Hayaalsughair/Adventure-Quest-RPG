@@ -22,26 +22,10 @@ namespace Adventure_Quest_RPG
             Inventory = new Inventory();
 
         }
-        public void calcItemsDrop(string chanceItems) {
-            
-            switch (chanceItems)
-            {
-                case "Potion":
-                    Health += 30;
-                    break;
-                case "Armor":
-                    Defense += 10;
-                    break;
-                case "Weapon":
-                    AttackPower += 10;
-                    break;
-                case "Helmet":
-                    Defense += 5;
-                    break;
-                case "Sword":
-                    AttackPower += 5;
-                    break;
-            }
+        public void UseItem(Items item)
+        {
+            item.Use(this);
+            Inventory.Remove(item);
         }
     }
 }

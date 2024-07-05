@@ -76,4 +76,5 @@ namespace Adventure_Quest_RPG
             player.Defense += Vist;
         }
     }
+   
 }
