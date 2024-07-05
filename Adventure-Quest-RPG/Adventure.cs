@@ -50,11 +50,6 @@ namespace Adventure_Quest_RPG
             }
         }
 
-
-
-
-
-
         //Choose Location
         public void DiscoverLocation()
         {
