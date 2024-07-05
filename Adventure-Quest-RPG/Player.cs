@@ -12,6 +12,7 @@ namespace Adventure_Quest_RPG
 
     public class Player:Character
     {
+        public Inventory Inventory { get; set; }
         //Random random = new Random();
         public Player( string name  , int attackPower = 60) {
 
@@ -22,32 +23,10 @@ namespace Adventure_Quest_RPG
             Inventory = new Inventory();
 
         }
-
-        public void UseItem(string itemName)
+        public void UseItem(Items item)
         {
-            foreach (var invItem in Inventory())
-            {
-                if (invItem.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))
-                {
-                    item = invItem;
-                    break; // Exit the loop once the item is found
-                }
-            }
-
-            if (item != null)
-            {
-                // Use the item
-                item.Use(this); // Pass 'this' to apply effects to the player
-
-                // Remove the item from inventory after use (optional, depends on your game logic)
-                Inventory.Remove(item);
-
-                Console.WriteLine($"Used {itemName}."); // Confirmation message
-            }
-            else
-            {
-                Console.WriteLine($"Item {itemName} not found in inventory.");
-            }
+            item.Use(this);
+            Inventory.Remove(item);
         }
 
 
