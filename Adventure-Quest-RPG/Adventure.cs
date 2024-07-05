@@ -7,10 +7,10 @@ namespace Adventure_Quest_RPG
     {
        
         private List<Monster> monster;
-        Random random = new Random();
-        Player player = new Player("shalaby", 60);
+        public Random random = new Random();
+        public Player player = new Player("shalaby", 60);
         private string chosenLocation = "Lobby";
-        BattleSystem battleSystem = new BattleSystem();
+        public BattleSystem battleSystem = new BattleSystem();
         public Adventure()
         {
             chosenMonster();
@@ -35,7 +35,7 @@ namespace Adventure_Quest_RPG
                         AttackMonster();
                         break;
                     case "V":
-                        Console.WriteLine("View");
+                        ViewInventory();
                         break;
                     case "S":
                         DisplayLocation();
@@ -130,15 +130,21 @@ namespace Adventure_Quest_RPG
 
         public void ViewInventory()
         {
-            player.
-            Console.WriteLine("Do you want to use an item? (yes/no)");
-            string useItemChoice = Console.ReadLine().ToLower();
+            
+            bool areThereItems=player.Inventory.DisplayTheInventory();
 
-            if (useItemChoice == "yes")
+            if (areThereItems)
             {
-                Console.WriteLine("Enter the name of the item you want to use:");
-                string itemName = Console.ReadLine();
-                player.UseItem(itemName);
+                Console.WriteLine("Do you want to use an item? (yes/no)");
+                string useItemChoice = Console.ReadLine().ToLower();
+
+                if (useItemChoice == "yes")
+                {
+                    Console.WriteLine("Enter the name of the item you want to use:");
+                    string itemName = Console.ReadLine();
+                    Console.WriteLine($"you are in view method{itemName}");
+                    //player.UseItem(itemName);
+                }
             }
         }
     }
