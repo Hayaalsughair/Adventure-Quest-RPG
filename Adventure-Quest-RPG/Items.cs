@@ -14,6 +14,7 @@ namespace Adventure_Quest_RPG
 
     public class Potion : Items
     {
+       
     }
     public class Sword : Items 
     { 
