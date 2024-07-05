@@ -40,7 +40,5 @@ namespace Adventure_Quest_RPG
                     break;
             }
         }
-
-
     }
 }
