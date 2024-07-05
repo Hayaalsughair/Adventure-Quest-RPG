@@ -1,41 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Adventure_Quest_RPG
 {
     public class Adventure
     {
-        private List<string> locations;
-        private List<string> monster;
+       
+        private List<Monster> monster;
+        Random random = new Random();
+        Player player = new Player("shalaby", 60);
+        private string chosenLocation = "Lobby";
 
-        private string chosenLocation = "Lobby ";
+        public Adventure()
+        {
+           
+            chosenMonster();
+        }
 
         public void StartAdventure()
         {
-            bool isStartPlay = true ;
+            bool isStartPlay = true;
 
-            while (true)
+            while (isStartPlay)
             {
                 Console.WriteLine("Press [D] Discover a new location\nPress [S] Show your current location \nPress [A] Attack a monster\nPress [V] View the inventory\nPress [Q] Quit the game");
 
-               
-               string playerChoice =  Console.ReadLine().ToUpper();
-   
+                string playerChoice = Console.ReadLine().ToUpper();
+
                 switch (playerChoice)
                 {
-
                     case "D":
                         DiscoverLocation();
                         break;
                     case "A":
-
+                        AttackMonster();
                         break;
                     case "V":
-
-
+                        Console.WriteLine("View");
                         break;
                     case "S":
                         DisplayLocation();
@@ -44,66 +45,88 @@ namespace Adventure_Quest_RPG
                         isStartPlay = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid Choice,Please try again");
+                        Console.WriteLine("Invalid Choice, Please try again");
                         break;
                 }
             }
         }
 
-        //Choose Location
+        // Choose Location
         public void DiscoverLocation()
         {
-            Console.WriteLine("Press[F] to dicover Forest\nPress[C] to dicover Cave\nPress [T] to dicover Tower");
             bool display = true;
             while (display)
             {
-             string playerDicover = Console.ReadLine().ToUpper();
-                switch (playerDicover)
+                Console.WriteLine("Press[F] to discover Forest\nPress[C] to discover Cave\nPress[T] to discover Tower\nPress[Q] Quit");
+
+                string playerDiscover = Console.ReadLine().ToUpper();
+                switch (playerDiscover)
                 {
                     case "F":
-                        Console.WriteLine($"You discover a new location: {locations[0]}");
-                        chosenLocation = locations[0];
-                          break;
+                        chosenLocation = "Forest";
+                        DisplayLocation();
+                        display = false;
+                        break;
                     case "C":
-                        Console.WriteLine($"You discover a new location: {locations[1]}");
-                        chosenLocation = locations[1];
-
+                        chosenLocation = "Cave";
+                        DisplayLocation();
+                        display = false;
                         break;
                     case "T":
-                        Console.WriteLine($"You discover a new location: {locations[2]}");
-                        chosenLocation = locations[2];
-
+                        chosenLocation = "Tower";
+                        DisplayLocation();
+                        display = false;
+                        break;
+                    case "Q":
+                        display=false;
                         break;
                     default:
-                        Console.WriteLine("Invalid Choice,Please try again");
+                        Console.WriteLine("Invalid Choice, Please try again");
                         break;
                 }
-
             }
-
         }
 
-        //Display Location 
+        // Display Location
         public void DisplayLocation()
         {
             Console.WriteLine($"Your Location: {chosenLocation}");
         }
-        //Location list
-        public void Gamelocations()
+
+        // Monster list
+        public void chosenMonster()
         {
-            locations = new List<string>
+            monster = new List<Monster>
             {
-                "Forest",
-                "Cave",
-                "Tower"
+                new RegularMonster("Mike Wazowski", 80, 70, 60),
+                new RegularMonster("Boo", 60, 30, 20),
+                new RegularMonster("Rex", 90, 60, 65),
+                new BossMonster() 
             };
         }
 
+        private void AttackMonster()
+        {
+            
+          if (monster == null || monster.Count == 0)
+          {
+             Console.WriteLine("No monsters available to attack.");
+              return;
+          }
 
+            Monster enemy = monster[random.Next(monster.Count)];
+            Console.WriteLine($"A wild {enemy.Name} appears!");
 
+            bool isPlayerWin = BattleSystem.StartBattle(player, enemy);
+
+            if (isPlayerWin)
+            {
+                Console.WriteLine($"You defeated the {enemy.Name}!");
+            }
+            else
+            {
+                Console.WriteLine("You have been defeated...");
+            }
+        }
     }
 }
-
-
-
-
