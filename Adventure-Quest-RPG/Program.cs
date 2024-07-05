@@ -28,23 +28,15 @@ namespace Adventure_Quest_RPG
             Console.WriteLine("\t\t   ##            ##     ##                   ##########");
 
             Console.WriteLine("\n\nWelcome to the RPG game!\n");
-            
-
             try
-                {
-                
-                Player newPLayer = new Player("shalaby ",60);
-                SullivanMonster shalabi = new SullivanMonster();
-                BattleSystem.StartStartBattle(newPLayer, shalabi);
-                   
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(" Error occurred:", ex.Message);
-                }
-
-            
+            {
+                Adventure adventure = new Adventure();
+                adventure.StartAdventure();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
           
             
             Console.WriteLine("\nFinsh Game!");

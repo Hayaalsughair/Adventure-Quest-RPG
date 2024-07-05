@@ -10,7 +10,7 @@ namespace Adventure_Quest_RPG_Test
         {
             //Arrange 
             var player1 = new Player("Boo");
-            var monster = new SullivanMonster();
+            var monster = new RegularMonster();
             int healthBefore = monster.Health;
 
             //Act
@@ -25,7 +25,7 @@ namespace Adventure_Quest_RPG_Test
         {
             //Arrange 
             var player1 = new Player("Boo");
-            var monster = new SullivanMonster();
+            var monster = new RegularMonster();
             int healthBefore = monster.Health;
 
             //Act
@@ -40,7 +40,7 @@ namespace Adventure_Quest_RPG_Test
         {
             //Arrange 
             var player1 = new Player("Boo");
-            var monster = new SullivanMonster();
+            var monster = new RegularMonster();
 
             //Act 
             var  isPlayerWin1 = BattleSystem.StartStartBattle(player1, monster);

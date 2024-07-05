@@ -44,7 +44,7 @@ namespace Adventure_Quest_RPG
             //Console.Clear();
         }
 
-        public static bool StartStartBattle(Player player, Monster enemy)
+        public static bool StartBattle(Player player, Monster enemy)
         {
            
             bool isPlayerWin = false;
