@@ -18,6 +18,7 @@ namespace Adventure_Quest_RPG
             Health = 100;
             AttackPower = attackPower;
             Defense = 18; 
+            Inventory inventory= new Inventory();
         }
         public void calcItemsDrop(string chanceItems) {
             

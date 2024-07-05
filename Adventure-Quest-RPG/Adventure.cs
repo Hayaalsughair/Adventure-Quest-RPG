@@ -127,5 +127,19 @@ namespace Adventure_Quest_RPG
                 Console.WriteLine("You have been defeated...");
             }
         }
+
+        public void ViewInventory()
+        {
+            player.
+            Console.WriteLine("Do you want to use an item? (yes/no)");
+            string useItemChoice = Console.ReadLine().ToLower();
+
+            if (useItemChoice == "yes")
+            {
+                Console.WriteLine("Enter the name of the item you want to use:");
+                string itemName = Console.ReadLine();
+                player.UseItem(itemName);
+            }
+        }
     }
 }
