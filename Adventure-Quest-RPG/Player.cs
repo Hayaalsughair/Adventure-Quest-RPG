@@ -19,7 +19,28 @@ namespace Adventure_Quest_RPG
             AttackPower = attackPower;
             Defense = 18; 
         }
+        public void calcItemsDrop(string chanceItems) {
+            
+            switch (chanceItems)
+            {
+                case "Potion":
+                    Health += 30;
+                    break;
+                case "Armor":
+                    Defense += 10;
+                    break;
+                case "Weapon":
+                    AttackPower += 10;
+                    break;
+                case "Helmet":
+                    Defense += 5;
+                    break;
+                case "Sword":
+                    AttackPower += 5;
+                    break;
+            }
+        }
 
-        
+
     }
 }

@@ -10,10 +10,9 @@ namespace Adventure_Quest_RPG
         Random random = new Random();
         Player player = new Player("shalaby", 60);
         private string chosenLocation = "Lobby";
-
+        BattleSystem battleSystem = new BattleSystem();
         public Adventure()
         {
-           
             chosenMonster();
         }
 
@@ -105,7 +104,7 @@ namespace Adventure_Quest_RPG
             };
         }
 
-        private void AttackMonster()
+        public void AttackMonster()
         {
             
           if (monster == null || monster.Count == 0)
@@ -117,7 +116,7 @@ namespace Adventure_Quest_RPG
             Monster enemy = monster[random.Next(monster.Count)];
             Console.WriteLine($"A wild {enemy.Name} appears!");
 
-            bool isPlayerWin = BattleSystem.StartBattle(player, enemy);
+            bool isPlayerWin = battleSystem.StartBattle(player, enemy);
 
             if (isPlayerWin)
             {
