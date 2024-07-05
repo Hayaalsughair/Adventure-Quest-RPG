@@ -5,7 +5,7 @@ namespace Adventure_Quest_RPG
 {
     public class Adventure
     {
-       
+
         private List<Monster> monster;
         public Random random = new Random();
         public Player player = new Player("shalaby", 60);
@@ -77,7 +77,7 @@ namespace Adventure_Quest_RPG
                         display = false;
                         break;
                     case "Q":
-                        display=false;
+                        display = false;
                         break;
                     default:
                         Console.WriteLine("Invalid Choice, Please try again");
@@ -100,18 +100,18 @@ namespace Adventure_Quest_RPG
                 new RegularMonster("Mike Wazowski", 80, 70, 60),
                 new RegularMonster("Boo", 60, 30, 20),
                 new RegularMonster("Rex", 90, 60, 65),
-                new BossMonster() 
+                new BossMonster()
             };
         }
 
         public void AttackMonster()
         {
-            
-          if (monster == null || monster.Count == 0)
-          {
-             Console.WriteLine("No monsters available to attack.");
-              return;
-          }
+
+            if (monster == null || monster.Count == 0)
+            {
+                Console.WriteLine("No monsters available to attack.");
+                return;
+            }
 
             Monster enemy = monster[random.Next(monster.Count)];
             Console.WriteLine($"A wild {enemy.Name} appears!");
@@ -130,37 +130,14 @@ namespace Adventure_Quest_RPG
 
         public void ViewInventory()
         {
-            
-            bool areThereItems=player.Inventory.DisplayTheInventory();
-
-
-        }
-
-        public void choseItems() {
 
             bool areThereItems = player.Inventory.DisplayTheInventory();
-            if (areThereItems)
-            {
-                Console.WriteLine("Do you want to use an item? (yes/no)");
-                string useItemChoice = Console.ReadLine().ToLower();
 
-                if (useItemChoice == "yes")
-               {
-                    Console.WriteLine("Enter the name of the item you want to use:");
-                    string itemName = Console.ReadLine();
-                    Console.WriteLine($"you are in view method{itemName}");
-                    player.UseItem(itemName);
+
         }
 
-        public void ViewInventory()
+        public void choseItems()
         {
-            
-            bool areThereItems=player.Inventory.DisplayTheInventory();
-
-           
-        }
-
-        public void choseItems() {
 
             bool areThereItems = player.Inventory.DisplayTheInventory();
             if (areThereItems)
@@ -169,13 +146,14 @@ namespace Adventure_Quest_RPG
                 string useItemChoice = Console.ReadLine().ToLower();
 
                 if (useItemChoice == "yes")
-               {
+                {
                     Console.WriteLine("Enter the name of the item you want to use:");
                     string itemName = Console.ReadLine();
                     Console.WriteLine($"you are in view method{itemName}");
                     player.UseItem(itemName);
                 }
-            }}
+            }
+        }       
         
     }
-    }
+}
