@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Adventure_Quest_RPG
 {
     public class BattleSystem
     {
-         
-        
+        List<string> dropedItems;
+        private Random random ;
 
-        public static void Attack( IBattleStates attacker, IBattleStates target)
+        public BattleSystem() {
+
+            chosenDropedItems();
+            random = new Random();
+        }
+
+        public void Attack( IBattleStates attacker, IBattleStates target)
         {
 
             //Console.WriteLine($"Round :{Round}\n");
@@ -44,7 +51,7 @@ namespace Adventure_Quest_RPG
             //Console.Clear();
         }
 
-        public static bool StartBattle(Player player, Monster enemy)
+        public  bool StartBattle(Player player, Monster enemy)
         {
            
             bool isPlayerWin = false;
@@ -65,6 +72,7 @@ namespace Adventure_Quest_RPG
                     Console.Beep();
                     Console.Beep();
                     Console.WriteLine("Ooh! You Still Alive ,Monster Is Defeated");
+                    chanceItems(player);
                     Thread.Sleep(3000);
                     //Console.Clear();
                     isPlayerWin = true;
@@ -126,8 +134,32 @@ namespace Adventure_Quest_RPG
             return isPlayerWin;
 
         }
-        
 
+        public void chosenDropedItems()
+        {
+            dropedItems = new List<string>
+            {
+                "Potion",
+                "Armor", 
+                "Weapon",
+                "Helmet",
+                "Sword" 
+            };
+        }
+
+        public  void chanceItems(Player player)
+        {
+            int randomnumber = random.Next(1,101);
+            if (randomnumber <= 25)
+            {
+                int indexDropItem = random.Next(dropedItems.Count);
+                player.calcItemsDrop(dropedItems[indexDropItem]);
+            }
+            else
+            {
+                Console.WriteLine("You Did not get any item ");
+            }
+        }
 
     }
 }
