@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -17,28 +18,38 @@ namespace Adventure_Quest_RPG
             Name = name;
             Health = 100;
             AttackPower = attackPower;
-            Defense = 18; 
+            Defense = 18;
+            Inventory = new Inventory();
+
         }
-        public void calcItemsDrop(string chanceItems) {
-            
-            switch (chanceItems)
+
+        public void UseItem(string itemName)
+        {
+            foreach (var invItem in Inventory())
             {
-                case "Potion":
-                    Health += 30;
-                    break;
-                case "Armor":
-                    Defense += 10;
-                    break;
-                case "Weapon":
-                    AttackPower += 10;
-                    break;
-                case "Helmet":
-                    Defense += 5;
-                    break;
-                case "Sword":
-                    AttackPower += 5;
-                    break;
+                if (invItem.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))
+                {
+                    item = invItem;
+                    break; // Exit the loop once the item is found
+                }
+            }
+
+            if (item != null)
+            {
+                // Use the item
+                item.Use(this); // Pass 'this' to apply effects to the player
+
+                // Remove the item from inventory after use (optional, depends on your game logic)
+                Inventory.Remove(item);
+
+                Console.WriteLine($"Used {itemName}."); // Confirmation message
+            }
+            else
+            {
+                Console.WriteLine($"Item {itemName} not found in inventory.");
             }
         }
+
+
     }
 }
