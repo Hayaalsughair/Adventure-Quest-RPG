@@ -30,13 +30,21 @@ namespace Adventure_Quest_RPG
             else
             {
                 Console.WriteLine("you have this items in your inventory");
-                foreach (var item in items)
+                for (int i =0; i<items.Count; i++)
                 {
-                    Console.WriteLine($"Item Name: {item.Name} \n Description: {item.Description}\n");
+                    Console.WriteLine($"{i + 1}. {items[i].Name} - {items[i].Description}");
                     return true;
                 }
             }
             return false;
+        }
+        public Items GetItemByIndex(int index)
+        {
+            if (index >= 0 && index < items.Count)
+            {
+                return items[index];
+            }
+            return null;
         }
         public void Remove(Items item)
         {
