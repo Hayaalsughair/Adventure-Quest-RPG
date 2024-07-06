@@ -37,6 +37,7 @@ namespace Adventure_Quest_RPG
                     case "A":
                       Console.WriteLine($"Level: {level}");
                         choseItems();
+                        level++;
                         AttackMonster();
                         level++;
                         break;
@@ -123,7 +124,7 @@ namespace Adventure_Quest_RPG
                 Console.WriteLine("No monsters available to attack.");
                 return;
             }
-            if (level > 9) {
+            if (level >= 9) {
                 isStartPlay = false;
                 return;
             }
