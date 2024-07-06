@@ -153,7 +153,7 @@ namespace Adventure_Quest_RPG
             if (randomnumber <= 25)
             {
                 int indexDropItem = random.Next(dropedItems.Count);
-                player.calcItemsDrop(dropedItems[indexDropItem]);
+               // player.calcItemsDrop(dropedItems[indexDropItem]);
             }
             else
             {
