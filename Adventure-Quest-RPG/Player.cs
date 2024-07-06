@@ -33,32 +33,32 @@ namespace Adventure_Quest_RPG
             switch (item)
             {
                 case Potion potion:
-                    // Example logic for potions
-                    Console.WriteLine($"{potion.Name} equipped. Use logic for potions.");
+                    Health += potion.Medicine;
+                    Console.WriteLine($"{potion.Name}: Your Health will increase +50  ");
                     break;
 
                 case DefensiveStructures D_structures:
-                    // Example logic for defensive structures
-                    Console.WriteLine($"{D_structures.Name} equipped. Use logic for defensive structures.");
+                    Health += D_structures.defensive_Structures;
+                    Console.WriteLine($"{D_structures.Name}: It will increase your Health +50");
                     break;
 
                 case ThunderSpears thunderSpears:
-                    // Example logic for ThunderSpears
-                    Console.WriteLine($"{thunderSpears.Name} equipped. Use logic for ThunderSpears.");
+                    AttackPower += thunderSpears.thunder_Spears;
+                    Console.WriteLine($"{thunderSpears.Name}: Your Attack Power increase +30");
                     break;
 
                 case PersonalArmor personalArmor:
-                    // Example logic for PersonalArmor
-                    Console.WriteLine($"{personalArmor.Name} equipped. Use logic for PersonalArmor.");
+                    Defense += personalArmor.Armor;
+                    Console.WriteLine($"{personalArmor.Name}: Your Defense will increase +30");
                     break;
 
                 case UltrahardSteelBlades steelBlades:
-                    // Example logic for UltrahardSteelBlades
-                    Console.WriteLine($"{steelBlades.Name} equipped. Use logic for UltrahardSteelBlades.");
+                    AttackPower += steelBlades.Blades;
+                    Console.WriteLine($"{steelBlades.Name}: Your Attack Power increase +50");
                     break;
 
                 case ODM_Gear odmGear:
-                    // Example logic for ODM_Gear
+                    Defense += odmGear.Repo;
                     Console.WriteLine($"{odmGear.Name} equipped. Use logic for ODM_Gear.");
                     break;
 

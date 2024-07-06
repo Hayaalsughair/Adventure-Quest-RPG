@@ -26,6 +26,9 @@ namespace Adventure_Quest_RPG
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
             target.CalcDamage(damage);
+            Console.WriteLine($"\n{attacker.Name} Power: {attacker.AttackPower}\t\t\t\t {target.Name} Power:{target.AttackPower}");
+            Console.WriteLine($"{attacker.Name} Health: {attacker.Health}\t\t\t\t {target.Name}Health:{target.Health}");
+            Console.WriteLine($"{attacker.Name} Defense:{target.Defense}\t\t\t\t {target.Name} Defense:{target.Defense}\n");
 
             Thread.Sleep(600);
 
@@ -45,8 +48,8 @@ namespace Adventure_Quest_RPG
             Console.WriteLine("\t\t ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
 
             Console.WriteLine($"\n\nThe Damage Is :{damage}");
-            Console.WriteLine($"Attacker Name :{attacker.Name}\t\tAttacker Health{attacker.Health}%");
-            Console.WriteLine($"Target Name:{target.Name}\tTarget Health:{target.Health}%");
+            //Console.WriteLine($"Attacker Name :{attacker.Name}\t\tAttacker Health{attacker.Health}%");
+            //Console.WriteLine($"Target Name:{target.Name}\tTarget Health:{target.Health}%\n");
             Thread.Sleep(5000);
             //Console.Clear();
         }
@@ -71,9 +74,9 @@ namespace Adventure_Quest_RPG
                     Console.Beep();
                     Console.Beep();
                     Console.Beep();
-                    Console.WriteLine("Ooh! You Still Alive ,Monster Is Defeated");
+                    Console.WriteLine("\nOoh! You Still Alive ,Monster Is Defeated\n");
                     chanceItems(player);
-                   // Thread.Sleep(2000);
+                    // Thread.Sleep(2000);
                     //Console.Clear();
                     isPlayerWin = true;
                     break;
@@ -139,11 +142,11 @@ namespace Adventure_Quest_RPG
         {
             dropedItems = new List<Items>
             {
-                new Potion("Healing Potion", 20),
-                new DefensiveStructures(" Fortress ", 50),
+                new Potion("Healing Potion", 50),
+                new DefensiveStructures(" Safe Zone ", 50),
                 new ThunderSpears("Thunder Spears", 30),
-                new PersonalArmor(" Steel Armor ", 10),
-                new UltrahardSteelBlades(" Steel Blades ", 40),
+                new PersonalArmor(" Steel Armor ", 30),
+                new UltrahardSteelBlades(" Steel Blades ", 50),
                 new ODM_Gear(" Scout Regiment Gear ", 25)
 
             };
