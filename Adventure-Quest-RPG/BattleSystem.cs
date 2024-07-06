@@ -24,7 +24,7 @@ namespace Adventure_Quest_RPG
         public void Attack( IBattleStates attacker, IBattleStates target)
         {
 
-            Console.WriteLine($"\t\t\t\t\t----------Round :{Round}\n----------");
+            Console.WriteLine($"\t\t----------Round :{Round}\n----------");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
             target.CalcDamage(damage);
