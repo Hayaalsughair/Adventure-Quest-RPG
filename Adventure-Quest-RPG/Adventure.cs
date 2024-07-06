@@ -136,23 +136,25 @@ namespace Adventure_Quest_RPG
 
         }
 
-        public void choseItems()
-        {
 
-            //bool areThereItems = player.Inventor.DisplayTheInventory();
-            //if (areThereItems)
-            //{
-            //    Console.WriteLine("Do you want to use an item? (yes/no)");
-            //    string useItemChoice = Console.ReadLine().ToLower();
+        //public void choseItems()
+        //{
 
-            //    if (useItemChoice == "yes")
-            //    {
-            //        Console.WriteLine("Enter the name of the item you want to use:");
-            //        string itemName = Console.ReadLine();
-            //        Console.WriteLine($"you are in view method{itemName}");
-            //        player.UseItem(itemName);
-            //    }
-            }
-        }       
+        //    bool areThereItems = player.Inventory.DisplayTheInventory();
+        //    if (areThereItems)
+        //    {
+        //        Console.WriteLine("Do you want to use an item? (yes/no)");
+        //        string useItemChoice = Console.ReadLine().ToLower();
+
+        //        if (useItemChoice == "yes")
+        //        {
+        //            Console.WriteLine("Enter the name of the item you want to use:");
+        //            string itemName = Console.ReadLine();
+        //            Console.WriteLine($"you are in view method{itemName}");
+        //            player.UseItem(itemName);
+        //        }
+        //    }
+        //}       
+
         
     }

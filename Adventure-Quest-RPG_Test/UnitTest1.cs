@@ -10,11 +10,12 @@ namespace Adventure_Quest_RPG_Test
         {
             //Arrange 
             var player1 = new Player("Boo");
-            var monster = new RegularMonster();
+            var monster = new RegularMonster("hi",50,30,20);
             int healthBefore = monster.Health;
+            BattleSystem battleSystem = new BattleSystem();
 
             //Act
-            BattleSystem.Attack(player1, monster);
+            battleSystem.Attack(player1, monster);
 
             //Assert 
             Assert.True(monster.Health < healthBefore);
@@ -25,11 +26,12 @@ namespace Adventure_Quest_RPG_Test
         {
             //Arrange 
             var player1 = new Player("Boo");
-            var monster = new RegularMonster();
+            var monster = new RegularMonster("boo",60,20,10);
             int healthBefore = monster.Health;
+            BattleSystem battleSystem = new BattleSystem();
 
             //Act
-            BattleSystem.Attack(monster, player1);
+            battleSystem.Attack(monster, player1);
 
             //Assert 
             Assert.False(player1.Health < healthBefore);
@@ -40,10 +42,11 @@ namespace Adventure_Quest_RPG_Test
         {
             //Arrange 
             var player1 = new Player("Boo");
-            var monster = new RegularMonster();
+            var monster = new RegularMonster("rex",90,70,8);
+            BattleSystem battleSystem = new BattleSystem();
 
             //Act 
-            var  isPlayerWin1 = BattleSystem.StartStartBattle(player1, monster);
+            var  isPlayerWin1 = battleSystem.StartBattle(player1, monster);
 
             //Assert
             if (isPlayerWin1)
