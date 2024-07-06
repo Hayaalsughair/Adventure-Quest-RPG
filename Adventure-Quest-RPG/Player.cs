@@ -15,12 +15,12 @@ namespace Adventure_Quest_RPG
     {
         public Inventory Inventory { get; set; }
         
-        public Player( string name  , int attackPower = 60) {
+        public Player( string name) {
 
             Name = name;
-            Health = 100;
-            AttackPower = attackPower;
-            Defense = 18;
+            Health = 200;
+            AttackPower = 200;
+            Defense = 50;
             Inventory = new Inventory();
 
         }
