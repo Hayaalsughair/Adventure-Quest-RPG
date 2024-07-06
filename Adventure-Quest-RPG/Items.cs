@@ -33,61 +33,86 @@ namespace Adventure_Quest_RPG
         }
 
     }
-    public class Sword : Items 
-    { 
-        public int MasterSword  { get; set; }
-        public Sword(string name , int masterSword)
-        {
-            Name = name;
-            Description = "A powerful sword that increases the player's attack power.";
-            MasterSword = masterSword;
-        }
-        public override void Use(Player player)
-        {
-            player.EquipItem(this);
-        }
-    }
-    public class Helmet: Items
+    public class DefensiveStructures : Items
     {
-        public int MilitaryHelmet { get; set; }
-        public Helmet(string name , int militaryHelmet)
+        public int defensive_Structures { get; private set; }
+
+        public DefensiveStructures(string name, int defensive_structures)
         {
             Name = name;
-            Description = "A sturdy helmet that provides additional defense to the player.";
-            MilitaryHelmet = militaryHelmet;
+            Description = "Structures built to defend against attacks and withstand damage.";
+            defensive_Structures = defensive_structures;
         }
+
         public override void Use(Player player)
         {
             player.EquipItem(this);
         }
     }
-    public class Weapon : Items
-    { 
-        public int Axe { get; set; }
-        public Weapon(string name , int axe)
+    public class ThunderSpears : Items
+    {
+        public int thunder_Spears { get; private set; }
+
+        public ThunderSpears(string name, int thunder_spears)
         {
             Name = name;
-            Description = "An Axe that enhances the player's attack power.";
-            Axe = axe;
+            Description = "Powerful spears capable of delivering electric shocks.";
+            thunder_Spears = thunder_spears;
         }
+
         public override void Use(Player player)
         {
             player.EquipItem(this);
         }
     }
-    public class Armor : Items
-    { 
-        public int Vist { get; set; }
-        public Armor(string name , int vist)
+    public class PersonalArmor : Items
+    {
+        public int Armor { get; private set; }
+
+        public PersonalArmor(string name, int armor)
         {
             Name = name;
-            Description = "Protective armor that increases the player's defense.";
-            Vist = vist;
+            Description = "Armor designed to protect the wearer's health.";
+            Armor = armor;
         }
+
         public override void Use(Player player)
         {
             player.EquipItem(this);
         }
     }
-   
+    public class UltrahardSteelBlades : Items
+    {
+        public int Blades { get; private set; }
+
+        public UltrahardSteelBlades(string name, int blades)
+        {
+            Name = name;
+            Description = "Extremely sharp blades made of ultrahard steel.";
+            Blades = blades;
+        }
+
+        public override void Use(Player player)
+        {
+            player.EquipItem(this);
+        }
+    }
+    public class ODM_Gear : Items
+    {
+        public int Repo { get; private set; }
+
+        public ODM_Gear(string name, int repo)
+        {
+            Name = name;
+            Description = "Advanced maneuvering equipment for defense.";
+            Repo = repo;
+        }
+
+        public override void Use(Player player)
+        {
+            player.EquipItem(this);
+        }
+    }
+
+
 }

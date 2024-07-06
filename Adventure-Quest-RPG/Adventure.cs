@@ -97,11 +97,17 @@ namespace Adventure_Quest_RPG
         {
             monster = new List<Monster>
             {
-                new RegularMonster("Mike Wazowski", 80, 70, 60),
-                new RegularMonster("Boo", 60, 30, 20),
-                new RegularMonster("Rex", 90, 60, 65),
-                new BossMonster()
-            };
+            new RegularMonster("Founding Titan", 1000, 500, 400),
+            new RegularMonster("Attack Titan", 900, 450, 300),
+            new RegularMonster("Colossal Titan", 1100, 550, 200),
+            new RegularMonster("Armored Titan", 1000, 400, 500),
+            new RegularMonster("Female Titan", 900, 430, 350),
+            new RegularMonster("Beast Titan", 950, 470, 300),
+            new RegularMonster("Jaw Titan", 800, 480, 250),
+            new RegularMonster("Cart Titan", 850, 320, 200),
+            new RegularMonster("War Hammer Titan", 950, 520, 300),
+            new BossMonster()
+             };
         }
 
         public void AttackMonster()

@@ -10,7 +10,7 @@ namespace Adventure_Quest_RPG
 {
     public class BattleSystem
     {
-        List<string> dropedItems;
+        List<Items> dropedItems;
         private Random random ;
 
         public BattleSystem() {
@@ -137,30 +137,33 @@ namespace Adventure_Quest_RPG
 
         public void chosenDropedItems()
         {
-            dropedItems = new List<string>
+            dropedItems = new List<Items>
             {
-                "Potion",
-                "Armor", 
-                "Weapon",
-                "Helmet",
-                "Sword" 
+                new Potion("Healing Potion", 20),
+                new DefensiveStructures(" Fortress ", 50),
+                new ThunderSpears("Thunder Spears", 30),
+                new PersonalArmor(" Steel Armor ", 10),
+                new UltrahardSteelBlades(" Steel Blades ", 40),
+                new ODM_Gear(" Scout Regiment Gear ", 25)
+
             };
         }
+        
 
-
-        //public  void chanceItems(Player player)
-        //{
-        //    int randomnumber = random.Next(1,101);
-        //    if (randomnumber <= 25)
-        //    {
-        //        int indexDropItem = random.Next(dropedItems.Count);
-        //        player.calcItemsDrop(dropedItems[indexDropItem]);
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("You Did not get any item ");
-        //    }
-        //}
+        public  void chanceItems(Player player)
+        {
+            int randomnumber = random.Next(1,101);
+            if (randomnumber <= 25)
+            {
+                int indexDropItem = random.Next(dropedItems.Count);
+                player.Inventory.AddItem(dropedItems[indexDropItem]);
+                Console.WriteLine($"You found a {dropedItems[indexDropItem].Name}!");
+            }
+            else
+           {
+                Console.WriteLine("You Did not get any item ");
+           }
+        }
 
 
     }

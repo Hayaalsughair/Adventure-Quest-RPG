@@ -30,37 +30,47 @@ namespace Adventure_Quest_RPG
         }
         public void EquipItem(Items item)
         {
-            if (item is Potion)
+            switch (item)
             {
-                AttackPower += ((Potion)item).Medicine;
-                Console.WriteLine($"{item.Name} equipped. Attack power increased by {((Potion)item).Medicine}.");
-            }
-            else
-            if (item is Sword)
-            {
-                AttackPower += ((Sword)item).MasterSword;
-                Console.WriteLine($"{item.Name} equipped. Attack power increased by {((Sword)item).MasterSword}.");
-            }
-            else
-            if (item is Weapon)
-            {
-                AttackPower += ((Weapon)item).Axe;
-                Console.WriteLine($"{item.Name} equipped. Attack power increased by {((Weapon)item).Axe}.");
-            }
-            else
-            if (item is Armor)
-            {
-                AttackPower += ((Armor)item).Vist;
-                Console.WriteLine($"{item.Name} equipped. Attack power increased by {((Armor)item).Vist}.");
-            }
-            else
-            if (item is Helmet)
-            {
-                Defense += ((Helmet)item).MilitaryHelmet;
-                Console.WriteLine($"{item.Name} equipped. Defense increased by {((Helmet)item).MilitaryHelmet}.");
+                case Potion potion:
+                    // Example logic for potions
+                    Console.WriteLine($"{potion.Name} equipped. Use logic for potions.");
+                    break;
+
+                case DefensiveStructures D_structures:
+                    // Example logic for defensive structures
+                    Console.WriteLine($"{D_structures.Name} equipped. Use logic for defensive structures.");
+                    break;
+
+                case ThunderSpears thunderSpears:
+                    // Example logic for ThunderSpears
+                    Console.WriteLine($"{thunderSpears.Name} equipped. Use logic for ThunderSpears.");
+                    break;
+
+                case PersonalArmor personalArmor:
+                    // Example logic for PersonalArmor
+                    Console.WriteLine($"{personalArmor.Name} equipped. Use logic for PersonalArmor.");
+                    break;
+
+                case UltrahardSteelBlades steelBlades:
+                    // Example logic for UltrahardSteelBlades
+                    Console.WriteLine($"{steelBlades.Name} equipped. Use logic for UltrahardSteelBlades.");
+                    break;
+
+                case ODM_Gear odmGear:
+                    // Example logic for ODM_Gear
+                    Console.WriteLine($"{odmGear.Name} equipped. Use logic for ODM_Gear.");
+                    break;
+
+                default:
+                    Console.WriteLine($"Cannot equip {item.Name}. Item type not recognized.");
+                    break;
             }
         }
-
-
     }
 }
+
+
+
+    
+
