@@ -23,7 +23,7 @@ namespace Adventure_Quest_RPG
 
             if (items.Count == 0)
             {
-                Console.WriteLine("you dont have any thing hahhaa \n");
+                Console.WriteLine("Empty Inventory!! \n");
                 
 
             }

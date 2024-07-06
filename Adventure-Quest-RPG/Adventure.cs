@@ -36,6 +36,7 @@ namespace Adventure_Quest_RPG
                         break;
                     case "A":
                       Console.WriteLine($"Level: {level}");
+                        choseItems();
                         AttackMonster();
                         level++;
                         break;
@@ -133,7 +134,7 @@ namespace Adventure_Quest_RPG
 
             if (isPlayerWin)
             {
-                Console.WriteLine($"You defeated the {enemy.Name}!");
+                Console.WriteLine($"You defeated the {enemy.Name}!\n");
             }
             else
             {
@@ -161,7 +162,7 @@ namespace Adventure_Quest_RPG
 
                 if (useItemChoice == "yes")
                 {
-                    Console.WriteLine("Enter the name of the item you want to use:");
+                    Console.WriteLine("Enter the item numer you want to use:");
                     int itemIndex = -1 ;
                     try
                     {
@@ -176,6 +177,7 @@ namespace Adventure_Quest_RPG
                     {
                         player.UseItem(item);
                         Console.WriteLine($"{item.Name} used.");
+                        Console.WriteLine(item.Description);
                     }
                     else
                     {

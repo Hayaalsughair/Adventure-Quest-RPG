@@ -23,7 +23,7 @@ namespace Adventure_Quest_RPG
         public Potion (string name, int medicine)
         {
             Name = name;
-            Description = "A magical potion that heals the player when consumed.";
+            Description = "A magical potion that heals the player when consumed.\n\tHealth: +50";
             Medicine = medicine;
         }
 
@@ -40,7 +40,7 @@ namespace Adventure_Quest_RPG
         public DefensiveStructures(string name, int defensive_structures)
         {
             Name = name;
-            Description = "Structures built to defend against attacks and withstand damage.";
+            Description = "Structures built to defend against attacks and withstand damage.\n\tHealth: +50";
             defensive_Structures = defensive_structures;
         }
 
@@ -56,7 +56,7 @@ namespace Adventure_Quest_RPG
         public ThunderSpears(string name, int thunder_spears)
         {
             Name = name;
-            Description = "Powerful spears capable of delivering electric shocks.";
+            Description = "Powerful spears capable of delivering electric shocks.\n\tAttack Power: +30";
             thunder_Spears = thunder_spears;
         }
 
@@ -72,7 +72,7 @@ namespace Adventure_Quest_RPG
         public PersonalArmor(string name, int armor)
         {
             Name = name;
-            Description = "Armor designed to protect the wearer's health.";
+            Description = "Armor designed to protect the wearer's health.\n\tDefense: +30";
             Armor = armor;
         }
 
@@ -88,7 +88,7 @@ namespace Adventure_Quest_RPG
         public UltrahardSteelBlades(string name, int blades)
         {
             Name = name;
-            Description = "Extremely sharp blades made of ultrahard steel.";
+            Description = "Extremely sharp blades made of ultrahard steel.\n\tAttack Power: +50";
             Blades = blades;
         }
 
@@ -104,7 +104,7 @@ namespace Adventure_Quest_RPG
         public ODM_Gear(string name, int repo)
         {
             Name = name;
-            Description = "Advanced maneuvering equipment for defense.";
+            Description = "Advanced maneuvering equipment for defense.\n\tDefense: +50";
             Repo = repo;
         }
 
