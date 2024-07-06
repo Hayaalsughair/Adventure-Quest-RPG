@@ -9,6 +9,7 @@ namespace Adventure_Quest_RPG_Test
         [Fact]
         public void EnemyHeathAfterAttack_IncrementalHealth()
         {
+
             //Arrange 
             var player1 = new Player("Boo");
             var monster = new RegularMonster("hi", 50, 30, 20);
