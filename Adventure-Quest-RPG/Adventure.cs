@@ -32,7 +32,6 @@ namespace Adventure_Quest_RPG
                         DiscoverLocation();
                         break;
                     case "A":
-                        choseItems();
                         AttackMonster();
                         break;
                     case "V":
@@ -98,14 +97,14 @@ namespace Adventure_Quest_RPG
         {
             monster = new List<Monster>
             {
-            new RegularMonster("Attack Titan", 100, 50, 20),
-            new RegularMonster("Colossal Titan", 100, 50, 20),
-            new RegularMonster("Armored Titan", 100, 50, 20),
-            new RegularMonster("Female Titan", 100, 50, 20),
-            new RegularMonster("Beast Titan", 100, 50, 20),
-            new RegularMonster("Jaw Titan",100, 50, 20),
-            new RegularMonster("Cart Titan",100, 50, 20),
-            new RegularMonster("War Hammer Titan", 100, 50, 20),
+            new RegularMonster("Attack Titan", 900, 450, 300),
+            new RegularMonster("Colossal Titan", 1100, 550, 200),
+            new RegularMonster("Armored Titan", 1000, 400, 500),
+            new RegularMonster("Female Titan", 900, 430, 350),
+            new RegularMonster("Beast Titan", 950, 470, 300),
+            new RegularMonster("Jaw Titan", 800, 480, 250),
+            new RegularMonster("Cart Titan", 850, 320, 200),
+            new RegularMonster("War Hammer Titan", 950, 520, 300),
             new BossMonster()
              };
         }
@@ -154,7 +153,7 @@ namespace Adventure_Quest_RPG
 
                 if (useItemChoice == "yes")
                 {
-                    Console.WriteLine("Enter the number of item you want to use:");
+                    Console.WriteLine("Enter the name of the item you want to use:");
                     int itemIndex = -1 ;
                     try
                     {

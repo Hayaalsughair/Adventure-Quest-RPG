@@ -72,7 +72,7 @@ namespace Adventure_Quest_RPG
                     Console.Beep();
                     Console.Beep();
                     Console.WriteLine("Ooh! You Still Alive ,Monster Is Defeated");
-                    chanceItems(player);
+                    //chanceItems(player);
                     Thread.Sleep(3000);
                     //Console.Clear();
                     isPlayerWin = true;

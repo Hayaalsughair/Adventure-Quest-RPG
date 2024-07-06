@@ -15,12 +15,12 @@ namespace Adventure_Quest_RPG
     {
         public Inventory Inventory { get; set; }
         
-        public Player( string name  , int attackPower = 70) {
+        public Player( string name  , int attackPower = 60) {
 
             Name = name;
-            Health = 500;
+            Health = 100;
             AttackPower = attackPower;
-            Defense = 30;
+            Defense = 18;
             Inventory = new Inventory();
 
         }
@@ -65,8 +65,6 @@ namespace Adventure_Quest_RPG
                 default:
                     Console.WriteLine($"Cannot equip {item.Name}. Item type not recognized.");
                     break;
-
-                    
             }
         }
     }
