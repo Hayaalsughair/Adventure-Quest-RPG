@@ -6,10 +6,6 @@ namespace Adventure_Quest_RPG
     {
         static void Main(string[] args)
         {
-            //Console.ForegroundColor = ConsoleColor.White;
-            //Console.BackgroundColor = ConsoleColor.Red;
-            //Console.WriteLine("This text is white on a red background.");
-
             Console.WriteLine("\n\n");
             Console.WriteLine("\t\t   ############         ###########          ############# ");
             Console.WriteLine("\t\t   ## ##########        ## #########        ###############     ");
