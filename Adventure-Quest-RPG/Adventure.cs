@@ -97,7 +97,6 @@ namespace Adventure_Quest_RPG
         {
             monster = new List<Monster>
             {
-            new RegularMonster("Founding Titan", 1000, 500, 400),
             new RegularMonster("Attack Titan", 900, 450, 300),
             new RegularMonster("Colossal Titan", 1100, 550, 200),
             new RegularMonster("Armored Titan", 1000, 400, 500),
