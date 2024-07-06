@@ -12,23 +12,25 @@ namespace Adventure_Quest_RPG
     {
         List<Items> dropedItems;
         private Random random ;
+        private int Round;
 
         public BattleSystem() {
 
             chosenDropedItems();
             random = new Random();
+            Round = 0;
         }
 
         public void Attack( IBattleStates attacker, IBattleStates target)
         {
 
-            //Console.WriteLine($"Round :{Round}\n");
+            Console.WriteLine($"Round :{Round}\n");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
             target.CalcDamage(damage);
-            Console.WriteLine($"\n{attacker.Name} Power: {attacker.AttackPower}\t\t\t\t {target.Name} Power:{target.AttackPower}");
-            Console.WriteLine($"{attacker.Name} Health: {attacker.Health}\t\t\t\t {target.Name}Health:{target.Health}");
-            Console.WriteLine($"{attacker.Name} Defense:{target.Defense}\t\t\t\t {target.Name} Defense:{target.Defense}\n");
+            Console.WriteLine($"\nName: {attacker.Name} - Helth :{attacker.Health}% \t\t\t\t\t\t\t Name: {target.Name} - Helth: {target.Health}%");
+            Console.WriteLine($"Power: {attacker.AttackPower}\t\t\t\t\t\t\t\t\t Power: {target.AttackPower} ");
+            Console.WriteLine($"Defense:{target.Defense}\t\t\t\t\t\t\t\t\t Defense: {target.Defense} \n");
 
             Thread.Sleep(600);
 
@@ -36,20 +38,19 @@ namespace Adventure_Quest_RPG
             Console.Beep(); 
             Console.Beep();
             Console.WriteLine("\n\n");
-            Console.WriteLine("\t\t          ###        ############# #############       ###               ######      ##      ##");
-            Console.WriteLine("\t\t         #####       ############# #############      #####             ########     ##     ##");
-            Console.WriteLine("\t\t        ##   ##            ##           ##           ##   ##           ##      ##    ##    ##");
-            Console.WriteLine("\t\t       ###   ###           ##           ##          ###   ###          ##      ##    ##   ##");
-            Console.WriteLine("\t\t      ###########          ##           ##         ###########         ##            #####");
-            Console.WriteLine("\t\t     #############         ##           ##        #############        ##            #####");
-            Console.WriteLine("\t\t    ##           ##        ##           ##       ##           ##       ##      ##    ##   ##");
-            Console.WriteLine("\t\t   ##             ##       ##           ##      ##             ##      ##      ##    ##    ##");
-            Console.WriteLine("\t\t  ##               ##      ##           ##     ##               ##      ########     ##     ##");
-            Console.WriteLine("\t\t ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
+            Console.WriteLine("          ###        ############# #############       ###               ######      ##      ##");
+            Console.WriteLine("         #####       ############# #############      #####             ########     ##     ##");
+            Console.WriteLine("        ##   ##            ##           ##           ##   ##           ##      ##    ##    ##");
+            Console.WriteLine("       ###   ###           ##           ##          ###   ###          ##      ##    ##   ##");
+            Console.WriteLine("      ###########          ##           ##         ###########         ##            #####");
+            Console.WriteLine("     #############         ##           ##        #############        ##            #####");
+            Console.WriteLine("    ##           ##        ##           ##       ##           ##       ##      ##    ##   ##");
+            Console.WriteLine("   ##             ##       ##           ##      ##             ##      ##      ##    ##    ##");
+            Console.WriteLine("  ##               ##      ##           ##     ##               ##      ########     ##     ##");
+            Console.WriteLine(" ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
 
             Console.WriteLine($"\n\nThe Damage Is :{damage}");
-            //Console.WriteLine($"Attacker Name :{attacker.Name}\t\tAttacker Health{attacker.Health}%");
-            //Console.WriteLine($"Target Name:{target.Name}\tTarget Health:{target.Health}%\n");
+          
             Thread.Sleep(5000);
             //Console.Clear();
         }
@@ -61,7 +62,7 @@ namespace Adventure_Quest_RPG
             while (player.Health > 0 && enemy.Health > 0)
             {
 
-                //Random++;
+                Round++;
                 Console.WriteLine("Player's turn.");
 
                 Attack(player, enemy);

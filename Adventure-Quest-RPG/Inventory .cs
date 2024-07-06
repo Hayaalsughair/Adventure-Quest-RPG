@@ -19,24 +19,23 @@ namespace Adventure_Quest_RPG
             items.Add(item);
         }
 
-       public bool DisplayTheInventory() {
+       public string DisplayTheInventory() {
 
             if (items.Count == 0)
             {
-                Console.WriteLine("Empty Inventory!! \n");
+                return"Empty Inventory!! \n";
                 
 
             }
-            else
-            {
+           
                 Console.WriteLine("you have this items in your inventory");
                 for (int i =0; i<items.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}. {items[i].Name} - {items[i].Description}");
-                    return true;
+                    
                 }
-            }
-            return false;
+            return "";
+            
         }
         public Items GetItemByIndex(int index)
         {

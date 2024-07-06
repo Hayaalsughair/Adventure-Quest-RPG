@@ -145,7 +145,11 @@ namespace Adventure_Quest_RPG
         public void ViewInventory()
         {
 
-            bool areThereItems = player.Inventory.DisplayTheInventory();
+            string isEmpty = player.Inventory.DisplayTheInventory();
+            if(isEmpty != "")
+            {
+                Console.WriteLine(isEmpty);
+            }
 
 
         }
@@ -154,8 +158,8 @@ namespace Adventure_Quest_RPG
         public void choseItems()
         {
 
-            bool areThereItems = player.Inventory.DisplayTheInventory();
-            if (areThereItems)
+            string isEmpty = player.Inventory.DisplayTheInventory();
+            if (isEmpty=="")
             {
                 Console.WriteLine("Do you want to use an item? (yes/no)");
                 string useItemChoice = Console.ReadLine().ToLower();
