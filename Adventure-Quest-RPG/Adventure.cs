@@ -6,11 +6,15 @@ namespace Adventure_Quest_RPG
     public class Adventure
     {
 
-        private List<Monster> monster;
+        public List<Monster> monster;
         public Random random = new Random();
-        public Player player = new Player("shalaby", 60);
-        private string chosenLocation = "Lobby";
+        public Player player = new Player("shalaby");
+        public string chosenLocation = "Lobby";
         public BattleSystem battleSystem = new BattleSystem();
+        public int level = 1;
+        public bool isStartPlay = true;
+
+
         public Adventure()
         {
             chosenMonster();
@@ -18,7 +22,6 @@ namespace Adventure_Quest_RPG
 
         public void StartAdventure()
         {
-            bool isStartPlay = true;
 
             while (isStartPlay)
             {
@@ -32,7 +35,9 @@ namespace Adventure_Quest_RPG
                         DiscoverLocation();
                         break;
                     case "A":
+                      Console.WriteLine($"Level: {level}");
                         AttackMonster();
+                        level++;
                         break;
                     case "V":
                         ViewInventory();
@@ -97,28 +102,31 @@ namespace Adventure_Quest_RPG
         {
             monster = new List<Monster>
             {
-            new RegularMonster("Attack Titan", 900, 450, 300),
-            new RegularMonster("Colossal Titan", 1100, 550, 200),
-            new RegularMonster("Armored Titan", 1000, 400, 500),
-            new RegularMonster("Female Titan", 900, 430, 350),
-            new RegularMonster("Beast Titan", 950, 470, 300),
-            new RegularMonster("Jaw Titan", 800, 480, 250),
-            new RegularMonster("Cart Titan", 850, 320, 200),
-            new RegularMonster("War Hammer Titan", 950, 520, 300),
+            new RegularMonster("Attack Titan", 100, 50, 20),
+            new RegularMonster("Colossal Titan", 100, 50, 20),
+            new RegularMonster("Armored Titan", 100, 50, 20),
+            new RegularMonster("Female Titan", 100, 50, 20),
+            new RegularMonster("Beast Titan", 100, 50, 20),
+            new RegularMonster("Jaw Titan", 100, 50, 20),
+            new RegularMonster("Cart Titan", 100, 50, 20),
+            new RegularMonster("War Hammer Titan", 100, 50, 20),
             new BossMonster()
              };
         }
 
         public void AttackMonster()
         {
-
+   
             if (monster == null || monster.Count == 0)
             {
                 Console.WriteLine("No monsters available to attack.");
                 return;
             }
-
-            Monster enemy = monster[random.Next(monster.Count)];
+            if (level > 9) {
+                isStartPlay = false;
+                return;
+            }
+            Monster enemy = monster[level-1];
             Console.WriteLine($"A wild {enemy.Name} appears!");
 
             bool isPlayerWin = battleSystem.StartBattle(player, enemy);
@@ -129,7 +137,7 @@ namespace Adventure_Quest_RPG
             }
             else
             {
-                Console.WriteLine("You have been defeated...");
+              Console.WriteLine("You have been defeated...");
             }
         }
 

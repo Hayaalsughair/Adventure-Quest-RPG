@@ -45,9 +45,9 @@ namespace Adventure_Quest_RPG
             Console.WriteLine("\t\t ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
 
             Console.WriteLine($"\n\nThe Damage Is :{damage}");
-            Console.WriteLine($"Attacker Name :{attacker.Name} \t Attacker Health{attacker.Health}%");
-            Console.WriteLine($"Target Name:{target.Name}\t\t Target Health:{target.Health}%");
-            Thread.Sleep(6000);
+            Console.WriteLine($"Attacker Name :{attacker.Name}\t\tAttacker Health{attacker.Health}%");
+            Console.WriteLine($"Target Name:{target.Name}\tTarget Health:{target.Health}%");
+            Thread.Sleep(5000);
             //Console.Clear();
         }
 
@@ -62,7 +62,7 @@ namespace Adventure_Quest_RPG
                 Console.WriteLine("Player's turn.");
 
                 Attack(player, enemy);
-                Thread.Sleep(3000);
+                //Thread.Sleep(2000);
                
                 if (enemy.Health <= 0) {
                     Console.Beep();
@@ -72,8 +72,8 @@ namespace Adventure_Quest_RPG
                     Console.Beep();
                     Console.Beep();
                     Console.WriteLine("Ooh! You Still Alive ,Monster Is Defeated");
-                    //chanceItems(player);
-                    Thread.Sleep(3000);
+                    chanceItems(player);
+                   // Thread.Sleep(2000);
                     //Console.Clear();
                     isPlayerWin = true;
                     break;
@@ -125,7 +125,7 @@ namespace Adventure_Quest_RPG
                     Console.WriteLine("\t\t########################################################################");
                     Console.WriteLine("\t\t########################################################################");
 
-                    Thread.Sleep(3000);
+                    //Thread.Sleep(3000);
                     //Console.Clear();
                     isPlayerWin = false;
                     break;
@@ -152,7 +152,7 @@ namespace Adventure_Quest_RPG
 
         public  void chanceItems(Player player)
         {
-            int randomnumber = random.Next(1,101);
+            int randomnumber = random.Next(1,24);
             if (randomnumber <= 25)
             {
                 int indexDropItem = random.Next(dropedItems.Count);
