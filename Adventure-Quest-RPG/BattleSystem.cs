@@ -24,11 +24,11 @@ namespace Adventure_Quest_RPG
         public void Attack( IBattleStates attacker, IBattleStates target)
         {
 
-            Console.WriteLine($"\n\n\t\t\t\t\t----------Round :{Round} ----------");
+            Console.WriteLine($"\n\n\t\t\t\t\t---------- Round :{Round} ----------");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
             target.CalcDamage(damage);
-            Console.WriteLine($"\nName: {attacker.Name} - Helth :{attacker.Health}% \t\t\t\t\t\t\t Name: {target.Name} - Helth: {target.Health}%");
+            Console.WriteLine($"\nName: {attacker.Name} - Health :{attacker.Health}% \t\t\t\t\t\t\t Name: {target.Name} - Health: {target.Health}%");
             Console.WriteLine($"Power: {attacker.AttackPower}\t\t\t\t\t\t\t\t\t Power: {target.AttackPower} ");
             Console.WriteLine($"Defense:{attacker.Defense}\t\t\t\t\t\t\t\t\t Defense: {target.Defense} \n");
 

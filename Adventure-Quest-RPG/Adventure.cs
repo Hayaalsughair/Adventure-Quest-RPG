@@ -25,7 +25,11 @@ namespace Adventure_Quest_RPG
 
             while (isStartPlay)
             {
-               
+                if (level >= 10)
+                {
+                    isStartPlay = false;
+                    return;
+                }
                 Console.WriteLine("Press [D] Discover a new location\nPress [S] Show your current location \nPress [A] Attack a monster\nPress [V] View the inventory\nPress [Q] Quit the game");
 
                 string playerChoice = Console.ReadLine().ToUpper();
@@ -124,15 +128,9 @@ namespace Adventure_Quest_RPG
                 Console.WriteLine("No monsters available to attack.");
                 return;
             }
-
-            if (level > 9)
-            {
-                isStartPlay = false;
-                return;
-            }
-            level++;
-
+     
             Monster enemy = monster[level-1];
+            level++;
             Console.WriteLine($"A wild {enemy.Name} appears!");
 
             bool isPlayerWin = battleSystem.StartBattle(player, enemy);
