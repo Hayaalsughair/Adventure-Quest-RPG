@@ -18,7 +18,7 @@ namespace Adventure_Quest_RPG
 
     public class Potion : Items
     {
-        public int Medicine{ get; private set; }
+        public int Medicine{ get;  set; }
 
         public Potion (string name, int medicine)
         {
@@ -35,7 +35,7 @@ namespace Adventure_Quest_RPG
     }
     public class DefensiveStructures : Items
     {
-        public int defensive_Structures { get; private set; }
+        public int defensive_Structures { get;  set; }
 
         public DefensiveStructures(string name, int defensive_structures)
         {
@@ -51,7 +51,7 @@ namespace Adventure_Quest_RPG
     }
     public class ThunderSpears : Items
     {
-        public int thunder_Spears { get; private set; }
+        public int thunder_Spears { get;  set; }
 
         public ThunderSpears(string name, int thunder_spears)
         {
@@ -67,7 +67,7 @@ namespace Adventure_Quest_RPG
     }
     public class PersonalArmor : Items
     {
-        public int Armor { get; private set; }
+        public int Armor { get;  set; }
 
         public PersonalArmor(string name, int armor)
         {
@@ -83,7 +83,7 @@ namespace Adventure_Quest_RPG
     }
     public class UltrahardSteelBlades : Items
     {
-        public int Blades { get; private set; }
+        public int Blades { get;  set; }
 
         public UltrahardSteelBlades(string name, int blades)
         {
@@ -99,7 +99,7 @@ namespace Adventure_Quest_RPG
     }
     public class ODM_Gear : Items
     {
-        public int Repo { get; private set; }
+        public int Repo { get;  set; }
 
         public ODM_Gear(string name, int repo)
         {
