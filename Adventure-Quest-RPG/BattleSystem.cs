@@ -18,19 +18,19 @@ namespace Adventure_Quest_RPG
 
             chosenDropedItems();
             random = new Random();
-            Round = 0;
+           
         }
 
         public void Attack( IBattleStates attacker, IBattleStates target)
         {
 
-            Console.WriteLine($"\t\t----------Round :{Round}\n----------");
+            Console.WriteLine($"\n\n\t\t\t\t\t---------- Round :{Round} ----------");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
             target.CalcDamage(damage);
-            Console.WriteLine($"\nName: {attacker.Name} - Helth :{attacker.Health}% \t\t\t\t\t\t\t Name: {target.Name} - Helth: {target.Health}%");
+            Console.WriteLine($"\nName: {attacker.Name} - Health :{attacker.Health}% \t\t\t\t\t\t\t Name: {target.Name} - Health: {target.Health}%");
             Console.WriteLine($"Power: {attacker.AttackPower}\t\t\t\t\t\t\t\t\t Power: {target.AttackPower} ");
-            Console.WriteLine($"Defense:{target.Defense}\t\t\t\t\t\t\t\t\t Defense: {target.Defense} \n");
+            Console.WriteLine($"Defense:{attacker.Defense}\t\t\t\t\t\t\t\t\t Defense: {target.Defense} \n");
 
             Thread.Sleep(600);
 
@@ -50,14 +50,16 @@ namespace Adventure_Quest_RPG
             Console.WriteLine(" ##                 ##     ##           ##    ##                 ##      ######      ##       ##");
 
             Console.WriteLine($"\n\nThe Damage Is :{damage}");
-          
+           Console.WriteLine("\n\n");
+
             Thread.Sleep(5000);
+           
             //Console.Clear();
         }
 
         public  bool StartBattle(Player player, Monster enemy)
         {
-           
+            Round = 0;
             bool isPlayerWin = false;
             while (player.Health > 0 && enemy.Health > 0)
             {
@@ -101,31 +103,32 @@ namespace Adventure_Quest_RPG
                     Console.Beep();
 
                     Console.WriteLine("\t\t########################################################################");
-                    Console.WriteLine("\t\t########################################################################");
-                    Console.WriteLine("\t\t##################███▀▀▀██#███▀▀▀███#███▀█▄█▀███#██▀▀▀##################");
-                    Console.WriteLine("\t\t##################██####██#██#####██#██###█###██#██#####################");
-                    Console.WriteLine("\t\t##################██###▄▄▄#██▄▄▄▄▄██#██###▀###██#██▀▀▀##################");
-                    Console.WriteLine("\t\t##################██####██#██#####██#██#######██#██#####################");
-                    Console.WriteLine("\t\t##################███▄▄▄██#██#####██#██#######██#██▄▄▄##################");
-                    Console.WriteLine("\t\t########################################################################");
-                    Console.WriteLine("\t\t##################███▀▀▀███#▀███##██▀#██▀▀▀#██▀▀▀▀██▄###################");
-                    Console.WriteLine("\t\t##################██#####██###██##██##██####██#####██###################");
-                    Console.WriteLine("\t\t##################██#####██###██##██##██▀▀▀#██▄▄▄▄▄▀▀###################");
-                    Console.WriteLine("\t\t##################██#####██###▀█##█▀##██####██#####██###################");
-                    Console.WriteLine("\t\t##################███▄▄▄███### ▀▀█▀▀##██▄▄▄#██#####██▄##################");
-                    Console.WriteLine("\t\t########################################################################");
-                    Console.WriteLine("\t\t########################################################################");
-                    Console.WriteLine("\t\t##########################██###############██###########################");
-                    Console.WriteLine("\t\t########################████▄###▄▄▄▄▄▄▄###▄████#########################");
-                    Console.WriteLine("\t\t###########################▀▀█▄█████████▄█▀▀############################");
-                    Console.WriteLine("\t\t#############################█████████████##############################");
-                    Console.WriteLine("\t\t#############################██▀▀▀███▀▀▀██##############################");
-                    Console.WriteLine("\t\t#############################██###███###██##############################");
-                    Console.WriteLine("\t\t#############################█████▀▄▀█████##############################");
-                    Console.WriteLine("\t\t##############################███████████###############################");
-                    Console.WriteLine("\t\t######################### ▄▄▄██##█▀█▀█##██▄▄▄###########################");
-                    Console.WriteLine("\t\t##########################▀▀██###########██▀▀###########################");
-                    Console.WriteLine("\t\t############################▀▀###########▀▀#############################");
+                    Console.WriteLine("\t\t################                                        ################");
+                    Console.WriteLine("\t\t################  ███▀▀▀██ ███▀▀▀███ ███▀█▄█▀███ ██▀▀▀  ################");
+                    Console.WriteLine("\t\t################  ██    ██ ██     ██ ██   █   ██ ██     ################");
+                    Console.WriteLine("\t\t################  ██   ▄▄▄ ██▄▄▄▄▄██ ██   ▀   ██ ██▀▀▀  ################");
+                    Console.WriteLine("\t\t################  ██    ██ ██     ██ ██       ██ ██     ################");
+                    Console.WriteLine("\t\t################  ███▄▄▄██ ██     ██ ██       ██ ██▄▄▄  ################");
+                    Console.WriteLine("\t\t################                                        ################");
+                    Console.WriteLine("\t\t################  ███▀▀▀███ ▀███   ██▀ ██▀▀▀ ██▀▀▀▀██▄  ################");
+                    Console.WriteLine("\t\t################  ██     ██   ██   ██  ██    ██     ██  ################");
+                    Console.WriteLine("\t\t################  ██     ██   ██   ██  ██▀▀▀ ██▄▄▄▄▄▀▀  ################");
+                    Console.WriteLine("\t\t################  ██     ██   ▀█   █▀  ██    ██     ██  ################");
+                    Console.WriteLine("\t\t################  ███▄▄▄███    ▀▀█▀▀   ██▄▄▄ ██     ██▄ ################");
+                    Console.WriteLine("\t\t################                                        ################");
+                    Console.WriteLine("\t\t##########################                   ###########################");
+                    Console.WriteLine("\t\t########################  ██               ██  #########################");
+                    Console.WriteLine("\t\t######################  ████▄   ▄▄▄▄▄▄▄   ▄████  #######################");
+                    Console.WriteLine("\t\t#########################  ▀▀█▄█████████▄█▀▀  ##########################");
+                    Console.WriteLine("\t\t###########################  █████████████  ############################");
+                    Console.WriteLine("\t\t###########################  ██▀▀▀███▀▀▀██  ############################");
+                    Console.WriteLine("\t\t###########################  ██   ███   ██  ############################");
+                    Console.WriteLine("\t\t###########################  █████▀█▀█████  ############################");
+                    Console.WriteLine("\t\t############################  ████   ████  #############################");
+                    Console.WriteLine("\t\t############################  ████   ████  #############################");
+                    Console.WriteLine("\t\t########################  ▄▄▄██▀▀▀▀▀▀▀▀▀▀██▄▄▄  #########################");
+                    Console.WriteLine("\t\t########################  ▀▀██           ██▀▀  #########################");
+                    Console.WriteLine("\t\t##########################  ▀▀           ▀▀  ###########################");
                     Console.WriteLine("\t\t########################################################################");
                     Console.WriteLine("\t\t########################################################################");
 
