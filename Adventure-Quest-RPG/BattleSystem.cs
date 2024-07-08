@@ -13,17 +13,19 @@ namespace Adventure_Quest_RPG
         List<Items> dropedItems;
         private Random random ;
         private int Round;
+        private Adventure adventure ;
 
         public BattleSystem() {
 
             chosenDropedItems();
             random = new Random();
+            adventure = new Adventure();
            
         }
 
         public void Attack( IBattleStates attacker, IBattleStates target)
         {
-
+           
             Console.WriteLine($"\n\n\t\t\t\t\t---------- Round :{Round} ----------");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
@@ -59,6 +61,7 @@ namespace Adventure_Quest_RPG
 
         public  bool StartBattle(Player player, Monster enemy)
         {
+            Console.WriteLine($"\n\n\t\t\t-------------------- Level : {adventure.level}--------------------");
             Round = 0;
             bool isPlayerWin = false;
             while (player.Health > 0 && enemy.Health > 0)
