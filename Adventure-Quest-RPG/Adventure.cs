@@ -123,7 +123,7 @@ new RegularMonster("Jaw Titan", 80, 15, 15),
 new RegularMonster("Female Titan", 100, 30, 30),
 new RegularMonster("Armored  Titan", 100, 35, 40),
 new RegularMonster("Beast Titan", 100, 40, 35),
-new RegularMonster("War Hammer", 100, 45, 45),
+new RegularMonster("War Hammer Titan", 100, 45, 45),
 new RegularMonster("Colossal ", 100, 50, 50),
 new RegularMonster("Attack Titan", 100, 60, 55),
             new BossMonster()
