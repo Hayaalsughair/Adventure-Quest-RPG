@@ -23,7 +23,9 @@ namespace Adventure_Quest_RPG
             Console.WriteLine("\t\t   ##           ##      ##                  ############");
             Console.WriteLine("\t\t   ##            ##     ##                   ##########");
 
-            Console.WriteLine("\n\nWelcome to the RPG game!\n");
+            Console.WriteLine("\n\nWelcome to the RPG game This game is based on the Attack on Titan series. Enjoy your time!");
+            Console.WriteLine("Sasageyo! Sasageyo! Shinzo wo sasageyo!\n");
+
             try
             {
                 Adventure adventure = new Adventure();

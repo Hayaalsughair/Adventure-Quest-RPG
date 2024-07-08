@@ -8,7 +8,7 @@ namespace Adventure_Quest_RPG
 {
     public class BossMonster : Monster
     {
-        public BossMonster() :base("Founding Titan", 250, 100, 50)
+        public BossMonster() : base("Founding Titan", 100, 80, 80)
         {
           
         }

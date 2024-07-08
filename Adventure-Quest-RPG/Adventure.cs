@@ -8,7 +8,7 @@ namespace Adventure_Quest_RPG
 
         public List<Monster> monster;
         public Random random = new Random();
-        public Player player = new Player("shalaby");
+        Player player = new Player("player");
         public string chosenLocation = "Lobby";
         public BattleSystem battleSystem = new BattleSystem();
         public int level = 1;
@@ -18,16 +18,23 @@ namespace Adventure_Quest_RPG
         public Adventure()
         {
             chosenMonster();
-        }
+          
+           
 
+        }
+ 
+        
         public void StartAdventure()
         {
+            
 
             while (isStartPlay)
             {
                 if (level >= 10)
                 {
+                    Console.WriteLine("\nThe victory wasn't easy, but we earned it with honor.\n");
                     isStartPlay = false;
+                    
                     return;
                 }
                 Console.WriteLine("Press [D] Discover a new location\nPress [S] Show your current location \nPress [A] Attack a monster\nPress [V] View the inventory\nPress [Q] Quit the game");
@@ -40,7 +47,7 @@ namespace Adventure_Quest_RPG
                         DiscoverLocation();
                         break;
                     case "A":
-                      Console.WriteLine($"Level: {level}");
+                     
                         choseItems();
                         AttackMonster();
                         
@@ -67,23 +74,23 @@ namespace Adventure_Quest_RPG
             bool display = true;
             while (display)
             {
-                Console.WriteLine("Press[F] to discover Forest\nPress[C] to discover Cave\nPress[T] to discover Tower\nPress[Q] Quit");
+                Console.WriteLine("Press[F] to discover The Forest\nPress[C] to discover City of Walls\nPress[T] to discover The Mountain\nPress[Q] Quit");
 
                 string playerDiscover = Console.ReadLine().ToUpper();
                 switch (playerDiscover)
                 {
                     case "F":
-                        chosenLocation = "Forest";
+                        chosenLocation = " The Forest";
                         DisplayLocation();
                         display = false;
                         break;
                     case "C":
-                        chosenLocation = "Cave";
+                        chosenLocation = "City of walls";
                         DisplayLocation();
                         display = false;
                         break;
                     case "T":
-                        chosenLocation = "Tower";
+                        chosenLocation = "The Mountain";
                         DisplayLocation();
                         display = false;
                         break;
@@ -108,15 +115,15 @@ namespace Adventure_Quest_RPG
         {
             monster = new List<Monster>
             {
-                new RegularMonster("Attack Titan", 50, 10, 5),
-                new RegularMonster("Jaw Titan", 70, 20, 10), 
-                new RegularMonster("Cart Titan", 90, 30, 15),
-                new RegularMonster("Female Titan", 110, 40, 20), 
-                new RegularMonster("Armored Titan", 130, 50, 25),   
-                new RegularMonster("Beast Titan", 150, 60, 30),     
-                new RegularMonster("War Hammer Titan", 170, 70, 35),
-                new RegularMonster("Colossal Titan", 190, 80, 40),
-                new BossMonster()
+            new RegularMonster("Cart Titan", 60, 10, 25),
+new RegularMonster("Jaw Titan", 80, 15, 15),
+new RegularMonster("Female Titan", 100, 30, 30),
+new RegularMonster("Armored  Titan", 100, 35, 40),
+new RegularMonster("Beast Titan", 100, 40, 35),
+new RegularMonster("War Hammer", 100, 45, 45),
+new RegularMonster("Colossal ", 100, 50, 50),
+new RegularMonster("Attack Titan", 100, 60, 55),
+            new BossMonster()
              };
         }
 
@@ -130,18 +137,24 @@ namespace Adventure_Quest_RPG
             }
      
             Monster enemy = monster[level-1];
-            level++;
-            Console.WriteLine($"A wild {enemy.Name} appears!");
 
-            bool isPlayerWin = battleSystem.StartBattle(player, enemy);
+
+
+            Console.WriteLine($"\t\t\t ------------------ Level :{level} - location :{chosenLocation}----------------\n");
+level++;
+            bool isPlayerWin = battleSystem.StartBattle(player, enemy); 
 
             if (isPlayerWin)
             {
+                
                 Console.WriteLine($"You defeated the {enemy.Name}!\n");
+                Console.WriteLine("################################");
             }
             else
             {
-              Console.WriteLine("You have been defeated...");
+                
+                Console.WriteLine("You have been defeated...");
+                Console.WriteLine("################################");
             }
         }
 

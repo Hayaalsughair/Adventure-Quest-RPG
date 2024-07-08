@@ -62,7 +62,7 @@ namespace Adventure_Quest_RPG_Test
         }
 
         [Fact]
-        public void TestDiscoveringLocation()
+        public void TestDiscoveringForestLocation()
         {
             //Arrange
             var adventure = new Adventure();

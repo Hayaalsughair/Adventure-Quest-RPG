@@ -13,17 +13,21 @@ namespace Adventure_Quest_RPG
         List<Items> dropedItems;
         private Random random ;
         private int Round;
+       
 
-        public BattleSystem() {
-
+        public BattleSystem()
+        {
+            
             chosenDropedItems();
             random = new Random();
+            Round = 0;
+          
            
         }
 
         public void Attack( IBattleStates attacker, IBattleStates target)
         {
-
+           
             Console.WriteLine($"\n\n\t\t\t\t\t---------- Round :{Round} ----------");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
@@ -59,13 +63,14 @@ namespace Adventure_Quest_RPG
 
         public  bool StartBattle(Player player, Monster enemy)
         {
+            
             Round = 0;
             bool isPlayerWin = false;
             while (player.Health > 0 && enemy.Health > 0)
             {
 
                 Round++;
-                Console.WriteLine("Player's turn.");
+                
 
                 Attack(player, enemy);
                 //Thread.Sleep(2000);
@@ -77,7 +82,11 @@ namespace Adventure_Quest_RPG
                     Console.Beep();
                     Console.Beep();
                     Console.Beep();
-                    Console.WriteLine("\nOoh! You Still Alive ,Monster Is Defeated\n");
+
+                    Console.WriteLine("##########################################################");
+                    
+                    
+
                     chanceItems(player);
                     // Thread.Sleep(2000);
                     //Console.Clear();
@@ -87,13 +96,13 @@ namespace Adventure_Quest_RPG
                 }
                 if (player.Health > 0)
                 {
-                    Console.WriteLine("Enemy's turn.");
-                    //Round++;
+                    
+                    ;
                     Attack(enemy, player);
                 }
                 if (player.Health <= 0)
                 {
-                    //Console.WriteLine($"Round :{Round}\n");
+                   
 
                     Console.Beep();
                     Console.Beep();
