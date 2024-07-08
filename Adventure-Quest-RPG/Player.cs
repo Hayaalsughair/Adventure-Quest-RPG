@@ -18,9 +18,9 @@ namespace Adventure_Quest_RPG
         public Player( string name) {
 
             Name = name;
-            Health = 200;
-            AttackPower = 200;
-            Defense = 50;
+            Health = 150;
+            AttackPower = 40;
+            Defense = 30;
             Inventory = new Inventory();
 
         }
