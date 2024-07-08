@@ -13,13 +13,12 @@ namespace Adventure_Quest_RPG
         List<Items> dropedItems;
         private Random random ;
         private int Round;
-        private Adventure adventure ;
 
         public BattleSystem() {
 
             chosenDropedItems();
             random = new Random();
-            adventure = new Adventure();
+          
            
         }
 
