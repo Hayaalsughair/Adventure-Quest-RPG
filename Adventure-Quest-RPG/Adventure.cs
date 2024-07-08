@@ -80,16 +80,19 @@ namespace Adventure_Quest_RPG
                 switch (playerDiscover)
                 {
                     case "F":
+                        Console.ForegroundColor = ConsoleColor.Green;
                         chosenLocation = " The Forest";
                         DisplayLocation();
                         display = false;
                         break;
                     case "C":
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         chosenLocation = "City of walls";
                         DisplayLocation();
                         display = false;
                         break;
                     case "T":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         chosenLocation = "The Mountain";
                         DisplayLocation();
                         display = false;

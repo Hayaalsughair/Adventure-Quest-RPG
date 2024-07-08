@@ -168,8 +168,8 @@ namespace Adventure_Quest_RPG
 
         public  void chanceItems(Player player)
         {
-            int randomnumber = random.Next(1,24);
-            if (randomnumber <= 25)
+            int randomnumber = random.Next(1, 101);
+            if (randomnumber <= 50)
             {
                 int indexDropItem = random.Next(dropedItems.Count);
                 player.Inventory.AddItem(dropedItems[indexDropItem]);
