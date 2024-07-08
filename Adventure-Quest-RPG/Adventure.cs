@@ -108,15 +108,15 @@ namespace Adventure_Quest_RPG
         {
             monster = new List<Monster>
             {
-                new RegularMonster("Attack Titan", 50, 10, 5),
-                new RegularMonster("Jaw Titan", 70, 20, 10), 
-                new RegularMonster("Cart Titan", 90, 30, 15),
-                new RegularMonster("Female Titan", 110, 40, 20), 
-                new RegularMonster("Armored Titan", 130, 50, 25),   
-                new RegularMonster("Beast Titan", 150, 60, 30),     
-                new RegularMonster("War Hammer Titan", 170, 70, 35),
-                new RegularMonster("Colossal Titan", 190, 80, 40),
-                new BossMonster()
+            new RegularMonster("Attack Titan", 100, 50, 20),
+            new RegularMonster("Colossal Titan", 100, 50, 20),
+            new RegularMonster("Armored Titan", 100, 50, 20),
+            new RegularMonster("Female Titan", 100, 50, 20),
+            new RegularMonster("Beast Titan", 100, 50, 20),
+            new RegularMonster("Jaw Titan", 100, 50, 20),
+            new RegularMonster("Cart Titan", 100, 50, 20),
+            new RegularMonster("War Hammer Titan", 100, 50, 20),
+            new BossMonster()
              };
         }
 
