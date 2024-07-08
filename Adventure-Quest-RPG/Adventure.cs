@@ -8,7 +8,7 @@ namespace Adventure_Quest_RPG
 
         public List<Monster> monster;
         public Random random = new Random();
-        public Player player = new Player("shalaby");
+        Player player = new Player("player");
         public string chosenLocation = "Lobby";
         public BattleSystem battleSystem = new BattleSystem();
         public int level = 1;
@@ -18,10 +18,15 @@ namespace Adventure_Quest_RPG
         public Adventure()
         {
             chosenMonster();
-        }
+          
+           
 
+        }
+ 
+        
         public void StartAdventure()
         {
+            
 
             while (isStartPlay)
             {
