@@ -31,6 +31,10 @@ namespace Adventure_Quest_RPG
             Console.WriteLine($"\n\n\t\t\t\t\t---------- Round :{Round} ----------");
 
             int damage = Math.Max(attacker.AttackPower - target.Defense, 0);
+            if (damage ==0 && attacker.AttackPower >= target.AttackPower)
+            {
+                damage= target.Defense/2;
+            }
             target.CalcDamage(damage);
             Console.WriteLine($"\nName: {attacker.Name} - Health :{attacker.Health}% \t\t\t\t\t\t\t Name: {target.Name} - Health: {target.Health}%");
             Console.WriteLine($"Power: {attacker.AttackPower}\t\t\t\t\t\t\t\t\t Power: {target.AttackPower} ");
